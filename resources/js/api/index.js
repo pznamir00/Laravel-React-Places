@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { setToken, deleteToken, redirect } from '../functions';
+import { setToken, deleteToken, redirect, setMessage, setMessageAfterRedirect } from '../functions';
+import $ from 'jquery';
 
 
 
@@ -26,8 +27,13 @@ const login = (email, password) => {
     .then(res => {
         setToken(res.success.token);
         redirect('/');
+        setMessageAfterRedirect('success', 'You logged successfuly');
     })
-    .catch(status => console.error(status))
+    .catch(() => {
+        $('input[name="email"]').val('');
+        $('input[name="password"]').val('');
+        setMessage('error', 'Incorrect email or password');
+    });
 }
 
 
@@ -110,7 +116,8 @@ const logoutUser = token => {
     })
     .then(res => res.json())
     .then(() => {
-        deleteToken()
+        deleteToken();
+        setMessageAfterRedirect('success', 'Logout successfuly');
         redirect('/');
     })
     .catch(status => console.error(status))
@@ -155,8 +162,9 @@ const putPlace = (data, token, id) => {
         }
     })
     .then(res => res.data)
-    .then(res => {
+    .then(() => {
         redirect('/');
+        setMessage('success', 'Place updated successfuly');
     })
     .catch(console.error);
 }

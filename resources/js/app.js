@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { GuestRoute, LoggedRoute } from './middlewares';
-import { Header, Footer } from './components/Layout';
+import { Header, Footer, MessagesInBuffor } from './components/Layout';
 import { Login, Register, PasswordReset, PasswordForgot, Logout } from './components/Auth';
 import Contact from './components/Pages/Contact';
 import AboutUs from './components/Pages/AboutUs';
@@ -12,13 +12,16 @@ import OnePlace from './components/Pages/OnePlace';
 import Account from './components/Logged/Account';
 import Error404 from './components/Errors/404';
 import { AddPlace, EditPlace } from './components/PlaceHandles';
-
+import NotificationContainer from 'react-notifications/lib/NotificationContainer';
+import 'react-notifications/lib/notifications.css';
 
 
 const App = () => {
     return (
       <React.Fragment>
           <Header/>
+          <MessagesInBuffor/>
+          <NotificationContainer/>
           <Switch>                
                 {/* GUEST */}
                 <GuestRoute path='/auth/login' component={Login} />

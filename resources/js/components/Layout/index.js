@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getUser } from '../../api';
-import { getToken } from '../../functions';
+import { getToken, setMessage, setMessageAfterRedirect } from '../../functions';
 
 
 const Header = () => {
@@ -70,7 +70,21 @@ const Footer = () => {
 
 
 
+const MessagesInBuffor = () => {
+    var messInBuffor = window.localStorage.getItem('messInBuffor');
+    console.log(JSON.parse(messInBuffor));
+    if(messInBuffor){
+        setMessage(messInBuffor.type, messInBuffor.text);
+        window.localStorage.removeItem('messInBuffor');
+    }
+    return null;
+}
+
+
+
+
 export{
     Header,
-    Footer
+    Footer,
+    MessagesInBuffor
 }

@@ -30,6 +30,7 @@
         "leaflet-geosearch": "^3.2.2",
         "react-leaflet": "^3.1.0",
         "react-multiple-image-input": "^1.0.0",
+        "react-notifications": "^1.7.2",
         "react-router": "^5.2.0",
         "react-router-dom": "^5.2.0",
         "react-simple-image-viewer": "0.0.8"
