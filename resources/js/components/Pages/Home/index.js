@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import L from 'leaflet';
 import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet';
-import { OpenStreetMapProvider } from 'leaflet-geosearch';
 import { getPlaces, fetchCategories } from '../../../api';
-import Searcher from './Searcher';
-
 
 export default class Home extends Component{
     
@@ -26,12 +23,43 @@ export default class Home extends Component{
     }
 
     fetchPlaces(){
-        getPlaces(this.state.filters).then(places => this.setState({ places }))
+        getPlaces(this.state.filters)
+        .then(places => this.setState({ places }))
+        .then(() => {
+            this.state.places.map(place => {
+                const { lat, lon } = place.location;
+                const popupContent = `<a href="/places/${place.slug}">
+                    <img src="/${place.images[0].name}" style="width:100px;height:100px;" alrt="Picture"/>
+                    <p>${place.short_description.substring(0, 10)}...</p>
+                </a>`;
+                const popupOptions = {
+                'maxWidth': '200',
+                'className' : 'custom'
+                }
+                return (
+                    L.marker([lat, lon]).bindTooltip('TEST', {
+                        permanent: true, 
+                        direction: 'right'
+                    }).bindPopup(popupContent, popupOptions).openPopup().addTo(this.map)
+                );         
+            })
+        })
     }
 
     componentDidMount(){
         this.fetchPlaces();
         fetchCategories().then(categories => this.setState({ categories }));
+        this.map = L.map("map", {
+            center: [58, 16],
+            zoom: 2.5,
+            zoomControl: true
+        });
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution:
+                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(this.map);
+        var geocoder = L.Control.geocoder();
+        geocoder.addTo(this.map);
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -111,31 +139,7 @@ export default class Home extends Component{
                         <button type='button' onClick={this.clearFilters}>Clear filters</button>
                     </div>
                 </div>
-                <MapContainer center={[51,14]} zoom={13} scrollWheelZoom={false}>
-                    <Searcher
-                        provider={new OpenStreetMapProvider()}
-                    />
-                    <TileLayer
-                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    />
-                    {this.state.places.map((place, key) => 
-                        <Marker position={[place.location.lat, place.location.lon]} key={key}>
-                            <Popup>
-                                <a href={`/places/${place.slug}`}>
-                                    <img
-                                        style={{ width: '100px', height: '100px' }}
-                                        src={place.images[0].name}
-                                        alt="Picture"
-                                    />
-                                    <p>
-                                        {place.short_description.substring(0, 10) + '...'}
-                                    </p>
-                                </a>
-                            </Popup>
-                        </Marker>
-                    )}
-                </MapContainer>
+                <div id="map"/>
             </div>
         )
     }

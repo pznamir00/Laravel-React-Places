@@ -6,3 +6,14 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+main{
+    min-height: 1200px;
+    padding: 100px;
+}
+
+label{
+    display: block;
+    margin: 10px;
+}

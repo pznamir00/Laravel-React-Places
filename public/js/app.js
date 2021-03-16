@@ -7319,6 +7319,25 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/components/Layout/style.scss":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/components/Layout/style.scss ***!
+  \**************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "header {\n  position: fixed;\n  width: 100vw;\n  top: 0;\n  left: 0;\n}\nheader .navbar {\n  background-color: #fff !important;\n}\nheader .collapse a {\n  font-weight: bold;\n  padding: 5px;\n  border: 2px solid transparent;\n  border-radius: 20px;\n  margin: 0px 10px;\n}\nheader .collapse a:hover {\n  border-color: #f76060;\n  background: #f76060;\n  color: #fff !important;\n  transition: 0.3s;\n}\n\nfooter {\n  background: #171717;\n  width: 100%;\n  color: #f0f0f0;\n  font-size: 20px;\n}\nfooter a {\n  color: #f0f0f0;\n}\nfooter .fab {\n  font-size: 70px;\n  margin: 20px;\n}\nfooter .copy {\n  background-color: #111;\n  padding-top: 5px;\n  padding-bottom: 5px;\n  text-align: right;\n  padding-right: 70px;\n  font-size: 13px;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/components/PlaceHandles/Add/Map/style.scss":
 /*!****************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/components/PlaceHandles/Add/Map/style.scss ***!
@@ -21296,1189 +21315,6 @@ leaflet__WEBPACK_IMPORTED_MODULE_0__["Util"].extend(leaflet__WEBPACK_IMPORTED_MO
 
 /* harmony default export */ __webpack_exports__["default"] = (GeocoderControl);
 //# sourceMappingURL=Control.Geocoder.modern.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/leaflet-geosearch/dist/geosearch.module.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/leaflet-geosearch/dist/geosearch.module.js ***!
-  \*****************************************************************/
-/*! exports provided: AlgoliaProvider, BingProvider, EsriProvider, GeoSearchControl, GoogleProvider, HereProvider, JsonProvider, LocationIQProvider, OpenCageProvider, OpenStreetMapProvider, SearchControl, SearchElement */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlgoliaProvider", function() { return Provider; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BingProvider", function() { return BingProvider; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EsriProvider", function() { return EsriProvider; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GeoSearchControl", function() { return SearchControl; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GoogleProvider", function() { return GoogleProvider; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HereProvider", function() { return HereProvider; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JsonProvider", function() { return AbstractProvider; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LocationIQProvider", function() { return LocationIQProvider; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OpenCageProvider", function() { return OpenCageProvider; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OpenStreetMapProvider", function() { return OpenStreetMapProvider; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchControl", function() { return SearchControl; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchElement", function() { return SearchElement; });
-/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
-/* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_0__);
-
-
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
-function _inheritsLoose(subClass, superClass) {
-  subClass.prototype = Object.create(superClass.prototype);
-  subClass.prototype.constructor = subClass;
-  subClass.__proto__ = superClass;
-}
-
-function _setPrototypeOf(o, p) {
-  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  };
-
-  return _setPrototypeOf(o, p);
-}
-
-function _isNativeReflectConstruct() {
-  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-  if (Reflect.construct.sham) return false;
-  if (typeof Proxy === "function") return true;
-
-  try {
-    Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
-
-function _construct(Parent, args, Class) {
-  if (_isNativeReflectConstruct()) {
-    _construct = Reflect.construct;
-  } else {
-    _construct = function _construct(Parent, args, Class) {
-      var a = [null];
-      a.push.apply(a, args);
-      var Constructor = Function.bind.apply(Parent, a);
-      var instance = new Constructor();
-      if (Class) _setPrototypeOf(instance, Class.prototype);
-      return instance;
-    };
-  }
-
-  return _construct.apply(null, arguments);
-}
-
-function createElement(element, className, parent, attributes) {
-  if (className === void 0) {
-    className = '';
-  }
-
-  if (attributes === void 0) {
-    attributes = {};
-  }
-
-  var el = document.createElement(element);
-
-  if (className) {
-    el.className = className;
-  }
-
-  Object.keys(attributes).forEach(function (key) {
-    if (typeof attributes[key] === 'function') {
-      var type = key.indexOf('on') === 0 ? key.substr(2).toLowerCase() : key;
-      el.addEventListener(type, attributes[key]);
-    } else if (key === 'html') {
-      el.innerHTML = attributes[key];
-    } else if (key === 'text') {
-      el.innerText = attributes[key];
-    } else {
-      el.setAttribute(key, attributes[key]);
-    }
-  });
-
-  if (parent) {
-    parent.appendChild(el);
-  }
-
-  return el;
-}
-function stopPropagation(event) {
-  event.preventDefault();
-  event.stopPropagation();
-}
-function createScriptElement(url, cb) {
-  var script = createElement('script', null, document.body);
-  script.setAttribute('type', 'text/javascript');
-  return new Promise(function (resolve) {
-    window[cb] = function (json) {
-      script.remove();
-      delete window[cb];
-      resolve(json);
-    };
-
-    script.setAttribute('src', url);
-  });
-}
-var cx = function cx() {
-  for (var _len = arguments.length, classNames = new Array(_len), _key = 0; _key < _len; _key++) {
-    classNames[_key] = arguments[_key];
-  }
-
-  return classNames.filter(Boolean).join(' ').trim();
-};
-function addClassName(element, className) {
-  if (!element || !element.classList) {
-    return;
-  }
-
-  var classNames = Array.isArray(className) ? className : [className];
-  classNames.forEach(function (name) {
-    if (!element.classList.contains(name)) {
-      element.classList.add(name);
-    }
-  });
-}
-function removeClassName(element, className) {
-  if (!element || !element.classList) {
-    return;
-  }
-
-  var classNames = Array.isArray(className) ? className : [className];
-  classNames.forEach(function (name) {
-    if (element.classList.contains(name)) {
-      element.classList.remove(name);
-    }
-  });
-}
-function replaceClassName(element, find, replace) {
-  removeClassName(element, find);
-  addClassName(element, replace);
-}
-
-var ENTER_KEY = 13;
-var ESCAPE_KEY = 27;
-var ARROW_DOWN_KEY = 40;
-var ARROW_UP_KEY = 38;
-var ARROW_LEFT_KEY = 37;
-var ARROW_RIGHT_KEY = 39;
-var SPECIAL_KEYS = [ENTER_KEY, ESCAPE_KEY, ARROW_DOWN_KEY, ARROW_UP_KEY, ARROW_LEFT_KEY, ARROW_RIGHT_KEY];
-
-var SearchElement = /*#__PURE__*/function () {
-  function SearchElement(_ref) {
-    var _this = this;
-
-    var handleSubmit = _ref.handleSubmit,
-        searchLabel = _ref.searchLabel,
-        _ref$classNames = _ref.classNames,
-        classNames = _ref$classNames === void 0 ? {} : _ref$classNames;
-    this.hasError = false;
-    this.container = createElement('div', cx('geosearch', classNames.container));
-    this.form = createElement('form', ['', classNames.form].join(' '), this.container, {
-      autocomplete: 'none',
-      onClick: stopPropagation,
-      onDblClick: stopPropagation,
-      touchStart: stopPropagation,
-      touchEnd: stopPropagation
-    });
-    this.input = createElement('input', ['glass', classNames.input].join(' '), this.form, {
-      type: 'text',
-      placeholder: searchLabel || 'search',
-      onInput: this.onInput,
-      onKeyUp: function onKeyUp(e) {
-        return _this.onKeyUp(e);
-      },
-      onKeyPress: function onKeyPress(e) {
-        return _this.onKeyPress(e);
-      },
-      onFocus: this.onFocus,
-      onBlur: this.onBlur,
-      onClick: function onClick() {
-        _this.input.focus();
-
-        _this.input.dispatchEvent(new Event('focus'));
-      }
-    });
-    this.handleSubmit = handleSubmit;
-  }
-
-  var _proto = SearchElement.prototype;
-
-  _proto.onFocus = function onFocus() {
-    addClassName(this.form, 'active');
-  };
-
-  _proto.onBlur = function onBlur() {
-    removeClassName(this.form, 'active');
-  };
-
-  _proto.onSubmit = function onSubmit(event) {
-    try {
-      var _this3 = this;
-
-      stopPropagation(event);
-      replaceClassName(_this3.container, 'error', 'pending');
-      return Promise.resolve(_this3.handleSubmit({
-        query: _this3.input.value
-      })).then(function () {
-        removeClassName(_this3.container, 'pending');
-      });
-    } catch (e) {
-      return Promise.reject(e);
-    }
-  };
-
-  _proto.onInput = function onInput() {
-    if (!this.hasError) {
-      return;
-    }
-
-    removeClassName(this.container, 'error');
-    this.hasError = false;
-  };
-
-  _proto.onKeyUp = function onKeyUp(event) {
-    if (event.keyCode !== ESCAPE_KEY) {
-      return;
-    }
-
-    removeClassName(this.container, ['pending', 'active']);
-    this.input.value = '';
-    document.body.focus();
-    document.body.blur();
-  };
-
-  _proto.onKeyPress = function onKeyPress(event) {
-    if (event.keyCode !== ENTER_KEY) {
-      return;
-    }
-
-    this.onSubmit(event);
-  };
-
-  _proto.setQuery = function setQuery(query) {
-    this.input.value = query;
-  };
-
-  return SearchElement;
-}();
-
-var ResultList = /*#__PURE__*/function () {
-  function ResultList(_ref) {
-    var _this = this;
-
-    var handleClick = _ref.handleClick,
-        _ref$classNames = _ref.classNames,
-        classNames = _ref$classNames === void 0 ? {} : _ref$classNames;
-    this.selected = -1;
-    this.results = [];
-
-    this.onClick = function (event) {
-      if (typeof _this.handleClick !== 'function') {
-        return;
-      }
-
-      var target = event.target;
-
-      if (!target || !_this.container.contains(target) || !target.hasAttribute('data-key')) {
-        return;
-      }
-
-      var idx = Number(target.getAttribute('data-key'));
-
-      _this.clear();
-
-      _this.handleClick({
-        result: _this.results[idx]
-      });
-    };
-
-    this.handleClick = handleClick;
-    this.container = createElement('div', cx('results', classNames.container));
-    this.container.addEventListener('click', this.onClick, true);
-    this.resultItem = createElement('div', cx(classNames.item));
-  }
-
-  var _proto = ResultList.prototype;
-
-  _proto.render = function render(results, resultFormat) {
-    var _this2 = this;
-
-    if (results === void 0) {
-      results = [];
-    }
-
-    this.clear();
-    results.forEach(function (result, idx) {
-      var child = _this2.resultItem.cloneNode(true);
-
-      child.setAttribute('data-key', "" + idx);
-      child.innerHTML = resultFormat({
-        result: result
-      });
-
-      _this2.container.appendChild(child);
-    });
-
-    if (results.length > 0) {
-      addClassName(this.container.parentElement, 'open');
-      addClassName(this.container, 'active');
-    }
-
-    this.results = results;
-  };
-
-  _proto.select = function select(index) {
-    Array.from(this.container.children).forEach(function (child, idx) {
-      return idx === index ? addClassName(child, 'active') : removeClassName(child, 'active');
-    });
-    this.selected = index;
-    return this.results[index];
-  };
-
-  _proto.count = function count() {
-    return this.results ? this.results.length : 0;
-  };
-
-  _proto.clear = function clear() {
-    this.selected = -1;
-
-    while (this.container.lastChild) {
-      this.container.removeChild(this.container.lastChild);
-    }
-
-    removeClassName(this.container.parentElement, 'open');
-    removeClassName(this.container, 'active');
-  };
-
-  return ResultList;
-}();
-
-function debounce(cb, wait, immediate) {
-  if (wait === void 0) {
-    wait = 250;
-  }
-
-  if (immediate === void 0) {
-    immediate = false;
-  }
-
-  var timeout;
-  return function () {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    if (timeout) {
-      clearTimeout(timeout);
-    }
-
-    timeout = setTimeout(function () {
-      timeout = null;
-
-      if (!immediate) {
-        cb.apply(void 0, args);
-      }
-    }, wait);
-
-    if (immediate && !timeout) {
-      cb.apply(void 0, args);
-    }
-  };
-}
-
-var defaultOptions = {
-  position: 'topleft',
-  style: 'button',
-  showMarker: true,
-  showPopup: false,
-  popupFormat: function popupFormat(_ref) {
-    var result = _ref.result;
-    return "" + result.label;
-  },
-  resultFormat: function resultFormat(_ref2) {
-    var result = _ref2.result;
-    return "" + result.label;
-  },
-  marker: {
-    icon: leaflet__WEBPACK_IMPORTED_MODULE_0___default.a && leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.Icon ? new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.Icon.Default() : undefined,
-    draggable: false
-  },
-  maxMarkers: 1,
-  maxSuggestions: 5,
-  retainZoomLevel: false,
-  animateZoom: true,
-  searchLabel: 'Enter address',
-  notFoundMessage: 'Sorry, that address could not be found.',
-  messageHideDelay: 3000,
-  zoomLevel: 18,
-  classNames: {
-    container: 'leaflet-bar leaflet-control leaflet-control-geosearch',
-    button: 'leaflet-bar-part leaflet-bar-part-single',
-    resetButton: 'reset',
-    msgbox: 'leaflet-bar message',
-    form: '',
-    input: ''
-  },
-  autoComplete: true,
-  autoCompleteDelay: 250,
-  autoClose: false,
-  keepResult: false,
-  updateMap: true
-};
-var UNINITIALIZED_ERR = 'Leaflet must be loaded before instantiating the GeoSearch control';
-var Control = {
-  options: _extends({}, defaultOptions),
-  classNames: _extends({}, defaultOptions.classNames),
-  initialize: function initialize(options) {
-    var _this = this;
-
-    if (!leaflet__WEBPACK_IMPORTED_MODULE_0___default.a) {
-      throw new Error(UNINITIALIZED_ERR);
-    }
-
-    if (!options.provider) {
-      throw new Error('Provider is missing from options');
-    }
-
-    this.options = _extends({}, this.options, {}, options);
-    this.classNames = _extends({}, this.classNames, {}, options.classNames);
-    this.markers = new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.FeatureGroup();
-    this.classNames.container += " leaflet-geosearch-" + this.options.style;
-    this.searchElement = new SearchElement({
-      searchLabel: this.options.searchLabel,
-      classNames: {
-        container: this.classNames.container,
-        form: this.classNames.form,
-        input: this.classNames.input
-      },
-      handleSubmit: function handleSubmit(result) {
-        return _this.onSubmit(result);
-      }
-    });
-    this.button = createElement('a', this.classNames.button, this.searchElement.container, {
-      title: this.options.searchLabel,
-      href: '#',
-      onClick: function onClick(e) {
-        return _this.onClick(e);
-      }
-    });
-    leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.DomEvent.disableClickPropagation(this.button);
-    this.resetButton = createElement('a', this.classNames.resetButton, this.searchElement.form, {
-      text: '×',
-      href: '#',
-      onClick: function onClick() {
-        return _this.clearResults(null, true);
-      }
-    });
-    leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.DomEvent.disableClickPropagation(this.resetButton);
-
-    if (this.options.autoComplete) {
-      this.resultList = new ResultList({
-        handleClick: function handleClick(_ref3) {
-          var result = _ref3.result;
-          _this.searchElement.input.value = result.label;
-
-          _this.onSubmit({
-            query: result.label,
-            data: result
-          });
-        }
-      });
-      this.searchElement.form.appendChild(this.resultList.container);
-      this.searchElement.input.addEventListener('keyup', debounce(function (e) {
-        return _this.autoSearch(e);
-      }, this.options.autoCompleteDelay), true);
-      this.searchElement.input.addEventListener('keydown', function (e) {
-        return _this.selectResult(e);
-      }, true);
-      this.searchElement.input.addEventListener('keydown', function (e) {
-        return _this.clearResults(e, true);
-      }, true);
-    }
-
-    this.searchElement.form.addEventListener('click', function (e) {
-      e.preventDefault();
-    }, false);
-  },
-  onAdd: function onAdd(map) {
-    var _this$options = this.options,
-        showMarker = _this$options.showMarker,
-        style = _this$options.style;
-    this.map = map;
-
-    if (showMarker) {
-      this.markers.addTo(map);
-    }
-
-    if (style === 'bar') {
-      var root = map.getContainer().querySelector('.leaflet-control-container');
-      this.container = createElement('div', 'leaflet-control-geosearch leaflet-geosearch-bar');
-      this.container.appendChild(this.searchElement.form);
-      root.appendChild(this.container);
-    }
-
-    leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.DomEvent.disableClickPropagation(this.searchElement.form);
-    return this.searchElement.container;
-  },
-  onRemove: function onRemove() {
-    var _this$container;
-
-    (_this$container = this.container) == null ? void 0 : _this$container.remove();
-    return this;
-  },
-  onClick: function onClick(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    var _this$searchElement = this.searchElement,
-        container = _this$searchElement.container,
-        input = _this$searchElement.input;
-
-    if (container.classList.contains('active')) {
-      removeClassName(container, 'active');
-      this.clearResults();
-    } else {
-      addClassName(container, 'active');
-      input.focus();
-    }
-  },
-  selectResult: function selectResult(event) {
-    if ([ENTER_KEY, ARROW_DOWN_KEY, ARROW_UP_KEY].indexOf(event.keyCode) === -1) {
-      return;
-    }
-
-    event.preventDefault();
-
-    if (event.keyCode === ENTER_KEY) {
-      var _item = this.resultList.select(this.resultList.selected);
-
-      this.onSubmit({
-        query: this.searchElement.input.value,
-        data: _item
-      });
-      return;
-    }
-
-    var max = this.resultList.count() - 1;
-
-    if (max < 0) {
-      return;
-    }
-
-    var selected = this.resultList.selected;
-    var next = event.keyCode === ARROW_DOWN_KEY ? selected + 1 : selected - 1;
-    var idx = next < 0 ? max : next > max ? 0 : next;
-    var item = this.resultList.select(idx);
-    this.searchElement.input.value = item.label;
-  },
-  clearResults: function clearResults(event, force) {
-    if (force === void 0) {
-      force = false;
-    }
-
-    if (event && event.keyCode !== ESCAPE_KEY) {
-      return;
-    }
-
-    var _this$options2 = this.options,
-        keepResult = _this$options2.keepResult,
-        autoComplete = _this$options2.autoComplete;
-
-    if (force || !keepResult) {
-      this.searchElement.input.value = '';
-      this.markers.clearLayers();
-    }
-
-    if (autoComplete) {
-      this.resultList.clear();
-    }
-  },
-  autoSearch: function autoSearch(event) {
-    try {
-      var _this3 = this;
-
-      if (SPECIAL_KEYS.indexOf(event.keyCode) > -1) {
-        return Promise.resolve();
-      }
-
-      var query = event.target.value;
-      var provider = _this3.options.provider;
-
-      var _temp2 = function () {
-        if (query.length) {
-          return Promise.resolve(provider.search({
-            query: query
-          })).then(function (results) {
-            results = results.slice(0, _this3.options.maxSuggestions);
-
-            _this3.resultList.render(results, _this3.options.resultFormat);
-          });
-        } else {
-          _this3.resultList.clear();
-        }
-      }();
-
-      return Promise.resolve(_temp2 && _temp2.then ? _temp2.then(function () {}) : void 0);
-    } catch (e) {
-      return Promise.reject(e);
-    }
-  },
-  onSubmit: function onSubmit(query) {
-    try {
-      var _this5 = this;
-
-      var provider = _this5.options.provider;
-      return Promise.resolve(provider.search(query)).then(function (results) {
-        if (results && results.length > 0) {
-          _this5.showResult(results[0], query);
-        }
-      });
-    } catch (e) {
-      return Promise.reject(e);
-    }
-  },
-  showResult: function showResult(result, query) {
-    var _this$options3 = this.options,
-        autoClose = _this$options3.autoClose,
-        updateMap = _this$options3.updateMap;
-    var markers = this.markers.getLayers();
-
-    if (markers.length >= this.options.maxMarkers) {
-      this.markers.removeLayer(markers[0]);
-    }
-
-    var marker = this.addMarker(result, query);
-
-    if (updateMap) {
-      this.centerMap(result);
-    }
-
-    this.map.fireEvent('geosearch/showlocation', {
-      location: result,
-      marker: marker
-    });
-
-    if (autoClose) {
-      this.closeResults();
-    }
-  },
-  closeResults: function closeResults() {
-    var container = this.searchElement.container;
-
-    if (container.classList.contains('active')) {
-      removeClassName(container, 'active');
-    }
-
-    this.clearResults();
-  },
-  addMarker: function addMarker(result, query) {
-    var _this6 = this;
-
-    var _this$options4 = this.options,
-        options = _this$options4.marker,
-        showPopup = _this$options4.showPopup,
-        popupFormat = _this$options4.popupFormat;
-    var marker = new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.Marker([result.y, result.x], options);
-    var popupLabel = result.label;
-
-    if (typeof popupFormat === 'function') {
-      popupLabel = popupFormat({
-        query: query,
-        result: result
-      });
-    }
-
-    marker.bindPopup(popupLabel);
-    this.markers.addLayer(marker);
-
-    if (showPopup) {
-      marker.openPopup();
-    }
-
-    if (options.draggable) {
-      marker.on('dragend', function (args) {
-        _this6.map.fireEvent('geosearch/marker/dragend', {
-          location: marker.getLatLng(),
-          event: args
-        });
-      });
-    }
-
-    return marker;
-  },
-  centerMap: function centerMap(result) {
-    var _this$options5 = this.options,
-        retainZoomLevel = _this$options5.retainZoomLevel,
-        animateZoom = _this$options5.animateZoom;
-    var resultBounds = result.bounds ? new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.LatLngBounds(result.bounds) : new leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.LatLng(result.y, result.x).toBounds(10);
-    var bounds = resultBounds.isValid() ? resultBounds : this.markers.getBounds();
-
-    if (!retainZoomLevel && resultBounds.isValid()) {
-      this.map.fitBounds(bounds, {
-        animate: animateZoom
-      });
-    } else {
-      this.map.setView(bounds.getCenter(), this.getZoom(), {
-        animate: animateZoom
-      });
-    }
-  },
-  getZoom: function getZoom() {
-    var _this$options6 = this.options,
-        retainZoomLevel = _this$options6.retainZoomLevel,
-        zoomLevel = _this$options6.zoomLevel;
-    return retainZoomLevel ? this.map.getZoom() : zoomLevel;
-  }
-};
-function SearchControl() {
-  if (!leaflet__WEBPACK_IMPORTED_MODULE_0___default.a) {
-    throw new Error(UNINITIALIZED_ERR);
-  }
-
-  var LControl = leaflet__WEBPACK_IMPORTED_MODULE_0___default.a.Control.extend(Control);
-
-  for (var _len = arguments.length, options = new Array(_len), _key = 0; _key < _len; _key++) {
-    options[_key] = arguments[_key];
-  }
-
-  return _construct(LControl, options);
-}
-
-var RequestType;
-
-(function (RequestType) {
-  RequestType[RequestType["SEARCH"] = 0] = "SEARCH";
-  RequestType[RequestType["REVERSE"] = 1] = "REVERSE";
-})(RequestType || (RequestType = {}));
-
-var AbstractProvider = /*#__PURE__*/function () {
-  function AbstractProvider(options) {
-    if (options === void 0) {
-      options = {};
-    }
-
-    this.options = options;
-  }
-
-  var _proto = AbstractProvider.prototype;
-
-  _proto.getParamString = function getParamString(params) {
-    if (params === void 0) {
-      params = {};
-    }
-
-    var set = _extends({}, this.options.params, {}, params);
-
-    return Object.keys(set).map(function (key) {
-      return encodeURIComponent(key) + "=" + encodeURIComponent(set[key]);
-    }).join('&');
-  };
-
-  _proto.getUrl = function getUrl(url, params) {
-    return url + "?" + this.getParamString(params);
-  };
-
-  _proto.search = function search(options) {
-    try {
-      var _this2 = this;
-
-      var url = _this2.endpoint({
-        query: options.query,
-        type: RequestType.SEARCH
-      });
-
-      return Promise.resolve(fetch(url)).then(function (request) {
-        return Promise.resolve(request.json()).then(function (json) {
-          return _this2.parse({
-            data: json
-          });
-        });
-      });
-    } catch (e) {
-      return Promise.reject(e);
-    }
-  };
-
-  return AbstractProvider;
-}();
-
-var Provider = /*#__PURE__*/function (_AbstractProvider) {
-  _inheritsLoose(Provider, _AbstractProvider);
-
-  function Provider() {
-    return _AbstractProvider.apply(this, arguments) || this;
-  }
-
-  var _proto = Provider.prototype;
-
-  _proto.endpoint = function endpoint() {
-    return 'https://places-dsn.algolia.net/1/places/query';
-  };
-
-  _proto.findBestMatchLevelIndex = function findBestMatchLevelIndex(vms) {
-    var match = vms.find(function (vm) {
-      return vm.matchLevel === 'full';
-    }) || vms.find(function (vm) {
-      return vm.matchLevel === 'partial';
-    });
-    return match ? vms.indexOf(match) : 0;
-  };
-
-  _proto.getLabel = function getLabel(result) {
-    var _result$locale_names, _result$city, _result$postcode, _result$country;
-
-    return [(_result$locale_names = result.locale_names) == null ? void 0 : _result$locale_names["default"][this.findBestMatchLevelIndex(result._highlightResult.locale_names["default"])], (_result$city = result.city) == null ? void 0 : _result$city["default"][this.findBestMatchLevelIndex(result._highlightResult.city["default"])], result.administrative[this.findBestMatchLevelIndex(result._highlightResult.administrative)], (_result$postcode = result.postcode) == null ? void 0 : _result$postcode[this.findBestMatchLevelIndex(result._highlightResult.postcode)], (_result$country = result.country) == null ? void 0 : _result$country["default"]].filter(Boolean).join(', ');
-  };
-
-  _proto.parse = function parse(response) {
-    var _this = this;
-
-    return response.data.hits.map(function (r) {
-      return {
-        x: r._geoloc.lng,
-        y: r._geoloc.lat,
-        label: _this.getLabel(r),
-        bounds: null,
-        raw: r
-      };
-    });
-  };
-
-  _proto.search = function search(_ref) {
-    var query = _ref.query;
-
-    try {
-      var _this3 = this;
-
-      var params = typeof query === 'string' ? {
-        query: query
-      } : query;
-      return Promise.resolve(fetch(_this3.endpoint(), {
-        method: 'POST',
-        body: JSON.stringify(_extends({}, _this3.options.params, {}, params))
-      })).then(function (request) {
-        return Promise.resolve(request.json()).then(function (json) {
-          return _this3.parse({
-            data: json
-          });
-        });
-      });
-    } catch (e) {
-      return Promise.reject(e);
-    }
-  };
-
-  return Provider;
-}(AbstractProvider);
-
-var BingProvider = /*#__PURE__*/function (_AbstractProvider) {
-  _inheritsLoose(BingProvider, _AbstractProvider);
-
-  function BingProvider() {
-    var _this;
-
-    _this = _AbstractProvider.apply(this, arguments) || this;
-    _this.searchUrl = 'https://dev.virtualearth.net/REST/v1/Locations';
-    return _this;
-  }
-
-  var _proto = BingProvider.prototype;
-
-  _proto.endpoint = function endpoint(_ref) {
-    var query = _ref.query,
-        jsonp = _ref.jsonp;
-    var params = typeof query === 'string' ? {
-      q: query
-    } : query;
-    params.jsonp = jsonp;
-    return this.getUrl(this.searchUrl, params);
-  };
-
-  _proto.parse = function parse(response) {
-    if (response.data.resourceSets.length === 0) {
-      return [];
-    }
-
-    return response.data.resourceSets[0].resources.map(function (r) {
-      return {
-        x: r.point.coordinates[1],
-        y: r.point.coordinates[0],
-        label: r.address.formattedAddress,
-        bounds: [[r.bbox[0], r.bbox[1]], [r.bbox[2], r.bbox[3]]],
-        raw: r
-      };
-    });
-  };
-
-  _proto.search = function search(_ref2) {
-    var query = _ref2.query;
-
-    try {
-      var _this3 = this;
-
-      var jsonp = "BING_JSONP_CB_" + Date.now();
-      return Promise.resolve(createScriptElement(_this3.endpoint({
-        query: query,
-        jsonp: jsonp
-      }), jsonp)).then(function (json) {
-        return _this3.parse({
-          data: json
-        });
-      });
-    } catch (e) {
-      return Promise.reject(e);
-    }
-  };
-
-  return BingProvider;
-}(AbstractProvider);
-
-var EsriProvider = /*#__PURE__*/function (_AbstractProvider) {
-  _inheritsLoose(EsriProvider, _AbstractProvider);
-
-  function EsriProvider() {
-    var _this;
-
-    _this = _AbstractProvider.apply(this, arguments) || this;
-    _this.searchUrl = 'https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/find';
-    return _this;
-  }
-
-  var _proto = EsriProvider.prototype;
-
-  _proto.endpoint = function endpoint(_ref) {
-    var query = _ref.query;
-    var params = typeof query === 'string' ? {
-      text: query
-    } : query;
-    params.f = 'json';
-    return this.getUrl(this.searchUrl, params);
-  };
-
-  _proto.parse = function parse(result) {
-    return result.data.locations.map(function (r) {
-      return {
-        x: r.feature.geometry.x,
-        y: r.feature.geometry.y,
-        label: r.name,
-        bounds: [[r.extent.ymin, r.extent.xmin], [r.extent.ymax, r.extent.xmax]],
-        raw: r
-      };
-    });
-  };
-
-  return EsriProvider;
-}(AbstractProvider);
-
-var GoogleProvider = /*#__PURE__*/function (_AbstractProvider) {
-  _inheritsLoose(GoogleProvider, _AbstractProvider);
-
-  function GoogleProvider() {
-    var _this;
-
-    _this = _AbstractProvider.apply(this, arguments) || this;
-    _this.searchUrl = 'https://maps.googleapis.com/maps/api/geocode/json';
-    return _this;
-  }
-
-  var _proto = GoogleProvider.prototype;
-
-  _proto.endpoint = function endpoint(_ref) {
-    var query = _ref.query;
-    var params = typeof query === 'string' ? {
-      address: query
-    } : query;
-    return this.getUrl(this.searchUrl, params);
-  };
-
-  _proto.parse = function parse(result) {
-    return result.data.results.map(function (r) {
-      return {
-        x: r.geometry.location.lng,
-        y: r.geometry.location.lat,
-        label: r.formatted_address,
-        bounds: [[r.geometry.viewport.southwest.lat, r.geometry.viewport.southwest.lng], [r.geometry.viewport.northeast.lat, r.geometry.viewport.northeast.lng]],
-        raw: r
-      };
-    });
-  };
-
-  return GoogleProvider;
-}(AbstractProvider);
-
-var HereProvider = /*#__PURE__*/function (_AbstractProvider) {
-  _inheritsLoose(HereProvider, _AbstractProvider);
-
-  function HereProvider() {
-    var _this;
-
-    _this = _AbstractProvider.apply(this, arguments) || this;
-    _this.searchUrl = 'https://geocode.search.hereapi.com/v1/geocode';
-    return _this;
-  }
-
-  var _proto = HereProvider.prototype;
-
-  _proto.endpoint = function endpoint(_ref) {
-    var query = _ref.query;
-    var params = typeof query === 'string' ? {
-      q: query
-    } : query;
-    return this.getUrl(this.searchUrl, params);
-  };
-
-  _proto.parse = function parse(response) {
-    return response.data.items.map(function (r) {
-      return {
-        x: r.position.lng,
-        y: r.position.lat,
-        label: r.address.label,
-        bounds: null,
-        raw: r
-      };
-    });
-  };
-
-  return HereProvider;
-}(AbstractProvider);
-
-var OpenStreetMapProvider = /*#__PURE__*/function (_AbstractProvider) {
-  _inheritsLoose(OpenStreetMapProvider, _AbstractProvider);
-
-  function OpenStreetMapProvider(options) {
-    var _this;
-
-    if (options === void 0) {
-      options = {};
-    }
-
-    _this = _AbstractProvider.call(this, options) || this;
-    var host = 'https://nominatim.openstreetmap.org';
-    _this.searchUrl = options.searchUrl || host + "/search";
-    _this.reverseUrl = options.reverseUrl || host + "/reverse";
-    return _this;
-  }
-
-  var _proto = OpenStreetMapProvider.prototype;
-
-  _proto.endpoint = function endpoint(_ref) {
-    var query = _ref.query,
-        type = _ref.type;
-    var params = typeof query === 'string' ? {
-      q: query
-    } : query;
-    params.format = 'json';
-
-    switch (type) {
-      case RequestType.REVERSE:
-        return this.getUrl(this.reverseUrl, params);
-
-      default:
-        return this.getUrl(this.searchUrl, params);
-    }
-  };
-
-  _proto.parse = function parse(response) {
-    var records = Array.isArray(response.data) ? response.data : [response.data];
-    return records.map(function (r) {
-      return {
-        x: Number(r.lon),
-        y: Number(r.lat),
-        label: r.display_name,
-        bounds: [[parseFloat(r.boundingbox[0]), parseFloat(r.boundingbox[2])], [parseFloat(r.boundingbox[1]), parseFloat(r.boundingbox[3])]],
-        raw: r
-      };
-    });
-  };
-
-  return OpenStreetMapProvider;
-}(AbstractProvider);
-
-var LocationIQProvider = /*#__PURE__*/function (_OpenStreetMapProvide) {
-  _inheritsLoose(LocationIQProvider, _OpenStreetMapProvide);
-
-  function LocationIQProvider(options) {
-    return _OpenStreetMapProvide.call(this, _extends({}, options, {
-      searchUrl: "https://locationiq.org/v1/search.php",
-      reverseUrl: "https://locationiq.org/v1/reverse.php"
-    })) || this;
-  }
-
-  return LocationIQProvider;
-}(OpenStreetMapProvider);
-
-var OpenCageProvider = /*#__PURE__*/function (_AbstractProvider) {
-  _inheritsLoose(OpenCageProvider, _AbstractProvider);
-
-  function OpenCageProvider() {
-    var _this;
-
-    _this = _AbstractProvider.apply(this, arguments) || this;
-    _this.searchUrl = 'https://api.opencagedata.com/geocode/v1/json';
-    return _this;
-  }
-
-  var _proto = OpenCageProvider.prototype;
-
-  _proto.endpoint = function endpoint(_ref) {
-    var query = _ref.query;
-    var params = typeof query === 'string' ? {
-      q: query
-    } : query;
-    params.format = 'json';
-    return this.getUrl(this.searchUrl, params);
-  };
-
-  _proto.parse = function parse(response) {
-    return response.data.results.map(function (r) {
-      return {
-        x: r.geometry.lng,
-        y: r.geometry.lat,
-        label: r.formatted,
-        bounds: [[r.bounds.southwest.lat, r.bounds.southwest.lng], [r.bounds.northeast.lat, r.bounds.northeast.lng]],
-        raw: r
-      };
-    });
-  };
-
-  _proto.search = function search(options) {
-    try {
-      var _this3 = this;
-
-      if (options.query.length < 2) {
-        return Promise.resolve([]);
-      }
-
-      return Promise.resolve(_AbstractProvider.prototype.search.call(_this3, options));
-    } catch (e) {
-      return Promise.reject(e);
-    }
-  };
-
-  return OpenCageProvider;
-}(AbstractProvider);
-
-
-//# sourceMappingURL=geosearch.module.js.map
 
 
 /***/ }),
@@ -82917,6 +81753,100 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-hamburger-menu/dist/HamburgerMenu.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-hamburger-menu/dist/HamburgerMenu.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports["default"] = HamburgerMenu;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function HamburgerMenu(props) {
+  var width = (props.width || 36) + "px",
+      height = (props.height || 30) + "px",
+      halfHeight = parseInt(height.replace("px", "")) / 2 + "px",
+      isOpen = props.isOpen || false,
+      strokeWidth = props.strokeWidth || 2,
+      halfStrokeWidth = "-" + strokeWidth / 2 + "px",
+      animationDuration = props.animationDuration || "0.4";
+
+  var getTransformValue = function getTransformValue(isOpen, defaultPos, rotateVal) {
+    return "translate3d(0," + (isOpen ? halfHeight : defaultPos) + ",0) rotate(" + (isOpen ? rotateVal + "deg" : "0") + ")";
+  };
+
+  var styles = {
+    container: {
+      width: width,
+      height: height,
+      position: "relative",
+      transform: "rotate(" + (props.rotate || 0) + "deg)"
+    },
+    lineBase: {
+      display: "block",
+      height: strokeWidth + "px",
+      width: "100%",
+      background: props.color || "#000",
+      transitionTimingFunction: "ease",
+      transitionDuration: animationDuration + "s",
+      borderRadius: (props.borderRadius || 0) + "px",
+      transformOrigin: "center",
+      position: "absolute"
+    },
+    firstLine: {
+      transform: getTransformValue(isOpen, 0, 45),
+      marginTop: halfStrokeWidth
+    },
+    secondLine: {
+      transitionTimingFunction: "ease-out",
+      transitionDuration: animationDuration / 4 + "s",
+      opacity: isOpen ? "0" : "1",
+      top: halfHeight,
+      marginTop: halfStrokeWidth
+    },
+    thirdLine: {
+      transform: getTransformValue(isOpen, height, -45),
+      marginTop: halfStrokeWidth
+    }
+  };
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: styles.container,
+    className: props.className,
+    onClick: props.menuClicked
+  }, /*#__PURE__*/_react["default"].createElement("span", {
+    style: Object.assign({}, styles.lineBase, styles.firstLine)
+  }), /*#__PURE__*/_react["default"].createElement("span", {
+    style: Object.assign({}, styles.lineBase, styles.secondLine)
+  }), /*#__PURE__*/_react["default"].createElement("span", {
+    style: Object.assign({}, styles.lineBase, styles.thirdLine)
+  }));
+}
+
+HamburgerMenu.propTypes = {
+  isOpen: _propTypes["default"].bool.isRequired,
+  menuClicked: _propTypes["default"].func.isRequired,
+  width: _propTypes["default"].number,
+  height: _propTypes["default"].number,
+  strokeWidth: _propTypes["default"].number,
+  rotate: _propTypes["default"].number,
+  color: _propTypes["default"].string,
+  borderRadius: _propTypes["default"].number,
+  animationDuration: _propTypes["default"].number,
+  className: _propTypes["default"].string
+};
+
+/***/ }),
+
 /***/ "./node_modules/react-is/cjs/react-is.development.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-is/cjs/react-is.development.js ***!
@@ -102951,7 +101881,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_4__["Header"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_notifications_lib_NotificationContainer__WEBPACK_IMPORTED_MODULE_13___default.a, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_middlewares__WEBPACK_IMPORTED_MODULE_3__["GuestRoute"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_notifications_lib_NotificationContainer__WEBPACK_IMPORTED_MODULE_13___default.a, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_middlewares__WEBPACK_IMPORTED_MODULE_3__["GuestRoute"], {
     path: "/auth/login",
     component: _components_Auth__WEBPACK_IMPORTED_MODULE_5__["Login"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_middlewares__WEBPACK_IMPORTED_MODULE_3__["GuestRoute"], {
@@ -102990,7 +101920,7 @@ var App = function App() {
     component: _components_Pages_AboutUs__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     component: _components_Errors_404__WEBPACK_IMPORTED_MODULE_11__["default"]
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_4__["Footer"], null));
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_4__["Footer"], null));
 };
 
 react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null)), document.getElementById('root'));
@@ -103450,17 +102380,21 @@ var Error404 = function Error404() {
 /*!*************************************************!*\
   !*** ./resources/js/components/Layout/index.js ***!
   \*************************************************/
-/*! exports provided: Header, Footer */
+/*! exports provided: default, Footer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return Header; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Footer", function() { return Footer; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../api */ "./resources/js/api/index.js");
 /* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../functions */ "./resources/js/functions/index.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_hamburger_menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-hamburger-menu */ "./node_modules/react-hamburger-menu/dist/HamburgerMenu.js");
+/* harmony import */ var react_hamburger_menu__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_hamburger_menu__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style.scss */ "./resources/js/components/Layout/style.scss");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_5__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -103477,6 +102411,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
+
 var Header = function Header(props) {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
       _useState2 = _slicedToArray(_useState, 2),
@@ -103486,37 +102423,64 @@ var Header = function Header(props) {
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState4 = _slicedToArray(_useState3, 2),
       loaded = _useState4[0],
-      setLoaded = _useState4[1]; //props.history.listen((location, action) => console.log('ppppp', location));
+      setLoaded = _useState4[1];
 
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      isOpen = _useState6[0],
+      setOpen = _useState6[1];
 
+  var collapse = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+  props.history.listen(function () {
+    return setLoaded(false);
+  });
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     var token = Object(_functions__WEBPACK_IMPORTED_MODULE_2__["getToken"])();
     Object(_api__WEBPACK_IMPORTED_MODULE_1__["getUser"])(token).then(function (res) {
       setUser(res);
       setLoaded(true);
     });
-  }, []);
+  }, [loaded]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (isOpen) collapse.current.classList.add('show');else collapse.current.classList.remove('show');
+  }, [isOpen]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
     className: "navbar navbar-expand-lg navbar-light bg-light"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "navbar-brand",
-    href: "#"
-  }, "Navbar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "navbar-toggler",
-    type: "button",
-    "data-toggle": "collapse",
-    "data-target": "#navbarSupportedContent",
-    "aria-controls": "navbarSupportedContent",
-    "aria-expanded": "false",
-    "aria-label": "Toggle navigation"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "navbar-toggler-icon"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "navbar-brand ml-lg-5 pl-5",
+    href: "/"
+  }, "Logo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_hamburger_menu__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    isOpen: isOpen,
+    menuClicked: function menuClicked() {
+      return setOpen(!isOpen);
+    },
+    width: 18,
+    height: 15,
+    strokeWidth: 4,
+    rotate: 0,
+    color: "black",
+    borderRadius: 0,
+    animationDuration: 0.5,
+    className: "border-none mr-5 d-lg-none"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    ref: collapse,
     className: "collapse navbar-collapse",
     id: "navbarSupportedContent"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ml-auto mr-5 pr-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "navbar-nav mr-auto"
-  }, loaded && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, user && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "nav-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "nav-link",
+    href: "/contact"
+  }, "Contact")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "nav-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "nav-link",
+    href: "/about-us"
+  }, "About Us")), loaded && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, user && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "nav-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "nav-link",
@@ -103536,14 +102500,73 @@ var Header = function Header(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "nav-link",
     href: "/auth/register"
-  }, "Sign up"))))))));
+  }, "Sign up")))))))));
 };
 
 var Footer = function Footer() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, "\xA9 All rights reserved");
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "d-flex justify-content-around"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mt-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-home mr-3"
+  }), "Home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/contact"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-envelope mr-3"
+  }), "Contact"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/about-us"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-info mr-3 mb-4"
+  }), "About us")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fab fa-linkedin-in"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fab fa-github"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "copy"
+  }, "\xA9 All rights reserved"));
 };
 
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(Header));
 
+
+/***/ }),
+
+/***/ "./resources/js/components/Layout/style.scss":
+/*!***************************************************!*\
+  !*** ./resources/js/components/Layout/style.scss ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./style.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/components/Layout/style.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -103763,23 +102786,6 @@ var Contact = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Pages/Home/Searcher/index.js":
-/*!**************************************************************!*\
-  !*** ./resources/js/components/Pages/Home/Searcher/index.js ***!
-  \**************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var Searcher = function Searcher(props) {
-  return null;
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Searcher);
-
-/***/ }),
-
 /***/ "./resources/js/components/Pages/Home/index.js":
 /*!*****************************************************!*\
   !*** ./resources/js/components/Pages/Home/index.js ***!
@@ -103795,9 +102801,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/esm/index.js");
-/* harmony import */ var leaflet_geosearch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! leaflet-geosearch */ "./node_modules/leaflet-geosearch/dist/geosearch.module.js");
-/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../api */ "./resources/js/api/index.js");
-/* harmony import */ var _Searcher__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Searcher */ "./resources/js/components/Pages/Home/Searcher/index.js");
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../api */ "./resources/js/api/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -103825,8 +102829,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
 
 
 
@@ -103865,9 +102867,24 @@ var Home = /*#__PURE__*/function (_Component) {
     value: function fetchPlaces() {
       var _this2 = this;
 
-      Object(_api__WEBPACK_IMPORTED_MODULE_4__["getPlaces"])(this.state.filters).then(function (places) {
+      Object(_api__WEBPACK_IMPORTED_MODULE_3__["getPlaces"])(this.state.filters).then(function (places) {
         return _this2.setState({
           places: places
+        });
+      }).then(function () {
+        _this2.state.places.map(function (place) {
+          var _place$location = place.location,
+              lat = _place$location.lat,
+              lon = _place$location.lon;
+          var popupContent = "<a href=\"/places/".concat(place.slug, "\">\n                    <img src=\"/").concat(place.images[0].name, "\" style=\"width:100px;height:100px;\" alrt=\"Picture\"/>\n                    <p>").concat(place.short_description.substring(0, 10), "...</p>\n                </a>");
+          var popupOptions = {
+            'maxWidth': '200',
+            'className': 'custom'
+          };
+          return leaflet__WEBPACK_IMPORTED_MODULE_1___default.a.marker([lat, lon]).bindTooltip('TEST', {
+            permanent: true,
+            direction: 'right'
+          }).bindPopup(popupContent, popupOptions).openPopup().addTo(_this2.map);
         });
       });
     }
@@ -103877,11 +102894,21 @@ var Home = /*#__PURE__*/function (_Component) {
       var _this3 = this;
 
       this.fetchPlaces();
-      Object(_api__WEBPACK_IMPORTED_MODULE_4__["fetchCategories"])().then(function (categories) {
+      Object(_api__WEBPACK_IMPORTED_MODULE_3__["fetchCategories"])().then(function (categories) {
         return _this3.setState({
           categories: categories
         });
       });
+      this.map = leaflet__WEBPACK_IMPORTED_MODULE_1___default.a.map("map", {
+        center: [58, 16],
+        zoom: 2.5,
+        zoomControl: true
+      });
+      leaflet__WEBPACK_IMPORTED_MODULE_1___default.a.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(this.map);
+      var geocoder = leaflet__WEBPACK_IMPORTED_MODULE_1___default.a.Control.geocoder();
+      geocoder.addTo(this.map);
     }
   }, {
     key: "componentDidUpdate",
@@ -103948,30 +102975,9 @@ var Home = /*#__PURE__*/function (_Component) {
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
         onClick: this.clearFilters
-      }, "Clear filters"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_leaflet__WEBPACK_IMPORTED_MODULE_2__["MapContainer"], {
-        center: [51, 14],
-        zoom: 13,
-        scrollWheelZoom: false
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Searcher__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        provider: new leaflet_geosearch__WEBPACK_IMPORTED_MODULE_3__["OpenStreetMapProvider"]()
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_leaflet__WEBPACK_IMPORTED_MODULE_2__["TileLayer"], {
-        attribution: "\xA9 <a href=\"http://osm.org/copyright\">OpenStreetMap</a> contributors",
-        url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      }), this.state.places.map(function (place, key) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_leaflet__WEBPACK_IMPORTED_MODULE_2__["Marker"], {
-          position: [place.location.lat, place.location.lon],
-          key: key
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_leaflet__WEBPACK_IMPORTED_MODULE_2__["Popup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "/places/".concat(place.slug)
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          style: {
-            width: '100px',
-            height: '100px'
-          },
-          src: place.images[0].name,
-          alt: "Picture"
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, place.short_description.substring(0, 10) + '...'))));
-      })));
+      }, "Clear filters"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "map"
+      }));
     }
   }]);
 
@@ -105111,8 +104117,8 @@ var LoggedRoute = function LoggedRoute(_ref3) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\Laravel-React-Places\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\Laravel-React-Places\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\app1\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\app1\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
