@@ -25,6 +25,7 @@
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
+        "history": "^5.0.0",
         "leaflet": "^1.7.1",
         "leaflet-control-geocoder": "^2.2.0",
         "leaflet-geosearch": "^3.2.2",

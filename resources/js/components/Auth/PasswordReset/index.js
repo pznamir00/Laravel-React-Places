@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { passwordReset } from '../../../api';
+import { passwordReset, passwordFind } from '../../../api';
 
 
 const PasswordReset = props => {
@@ -14,8 +14,7 @@ const PasswordReset = props => {
 
     useEffect(() => {
         const _token = props.match.params.token;
-        axios.get('/api/password/find/' + _token)
-        .then(res => res.data)
+        passwordFind(props.history, _token)
         .then(res => setData({
             token: res.token,
             email: res.email,
@@ -23,7 +22,6 @@ const PasswordReset = props => {
             password_confirmation: "",
             loaded: true
         }))
-        .catch(() => props.history.push('/')) //password reset token not exists*/
     }, [])
 
     const onChangeHandle = e => {

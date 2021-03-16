@@ -1,9 +1,9 @@
 require('./bootstrap');
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { GuestRoute, LoggedRoute } from './middlewares';
-import { Header, Footer, MessagesInBuffor } from './components/Layout';
+import { Header, Footer } from './components/Layout';
 import { Login, Register, PasswordReset, PasswordForgot, Logout } from './components/Auth';
 import Contact from './components/Pages/Contact';
 import AboutUs from './components/Pages/AboutUs';
@@ -20,7 +20,6 @@ const App = () => {
     return (
       <React.Fragment>
           <Header/>
-          <MessagesInBuffor/>
           <NotificationContainer/>
           <Switch>                
                 {/* GUEST */}
@@ -52,8 +51,8 @@ const App = () => {
 
 
 ReactDOM.render(
-    <BrowserRouter>
+    <Router>
         <App />
-    </BrowserRouter>,
+    </Router>,
     document.getElementById('root')
 )

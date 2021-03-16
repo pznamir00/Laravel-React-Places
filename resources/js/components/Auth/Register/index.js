@@ -22,6 +22,7 @@ const Register = props => {
     const onSubmitHandle = e => {
         e.preventDefault();
         register(
+            props.history,
             data.email, 
             data.name, 
             data.password, 

@@ -15,7 +15,7 @@ const PasswordForgot = () => {
 
     const onSubmitHandle = e => {
         e.preventDefault();
-        passwordForgot(data.email);
+        passwordForgot(this.props.history, data.email);
     }
 
     return(

@@ -111,9 +111,9 @@ export default class AddPlace extends Component{
         }
         
         if(!this.props.type){
-            postPlace(data, getToken());
+            postPlace(this.props.history, data, getToken());
         } else {
-            this.props.onSubmit(data);
+            this.props.onSubmit(this.props.history, data);
         }
     }
 

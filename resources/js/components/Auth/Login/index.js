@@ -20,6 +20,7 @@ const Login = props => {
     const onSubmitHandle = e => {
         e.preventDefault();
         login(
+            props.history,
             data.email,
             data.password
         );

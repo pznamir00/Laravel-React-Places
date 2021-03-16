@@ -1,6 +1,6 @@
 import React from 'react';
 import { putPlace, getUser, getOnePlace, getAddress } from '../../../api';
-import { getToken, redirect } from '../../../functions';
+import { getToken } from '../../../functions';
 import AddPlace from '../Add';
 
 
@@ -62,8 +62,8 @@ export default class EditPlace extends React.Component{
         })
     }
 
-    onSubmit(data){
-        putPlace(data, this.state.token, this.state.placeId);
+    onSubmit(props, data){
+        putPlace(props, data, this.state.token, this.state.placeId);
     }
 
     render(){

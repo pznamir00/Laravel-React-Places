@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { getUser } from '../../api';
-import { getToken, setMessage, setMessageAfterRedirect } from '../../functions';
+import { getToken } from '../../functions';
 
 
-const Header = () => {
+const Header = props => {
     const [user, setUser] = useState(null);
     const [loaded, setLoaded] = useState(false);
+    //props.history.listen((location, action) => console.log('ppppp', location));
+
     useEffect(() => {
         let token = getToken();
         getUser(token).then(res => {
@@ -21,7 +23,6 @@ const Header = () => {
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         {loaded &&
@@ -70,21 +71,8 @@ const Footer = () => {
 
 
 
-const MessagesInBuffor = () => {
-    var messInBuffor = window.localStorage.getItem('messInBuffor');
-    console.log(JSON.parse(messInBuffor));
-    if(messInBuffor){
-        setMessage(messInBuffor.type, messInBuffor.text);
-        window.localStorage.removeItem('messInBuffor');
-    }
-    return null;
-}
-
-
-
 
 export{
     Header,
-    Footer,
-    MessagesInBuffor
+    Footer
 }

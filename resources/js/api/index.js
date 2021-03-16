@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { setToken, deleteToken, redirect, setMessage, setMessageAfterRedirect } from '../functions';
+import { setToken, deleteToken, setMessage } from '../functions';
 import $ from 'jquery';
 
 
@@ -14,7 +14,7 @@ const getAddress = (lat, lon) => {
 }
 
 
-const login = (email, password) => {
+const login = (history, email, password) => {
     axios.post('/api/login', {
         email,
         password
@@ -26,8 +26,8 @@ const login = (email, password) => {
     .then(res => res.data)
     .then(res => {
         setToken(res.success.token);
-        redirect('/');
-        setMessageAfterRedirect('success', 'You logged successfuly');
+        history.push('/');
+        setMessage('success', 'You logged successfuly');
     })
     .catch(() => {
         $('input[name="email"]').val('');
@@ -38,7 +38,24 @@ const login = (email, password) => {
 
 
 
-const register = (email, name, password, password_confirmation) => {
+const logoutUser = (history, token) => {
+    fetch('http://127.0.0.1:8000/api/logout', {
+        headers: { 
+            "Authorization": `Bearer ${token}` 
+        }
+    })
+    .then(res => res.json())
+    .then(() => {
+        deleteToken();
+        history.push('/');
+        setMessage('success', 'Logout successfuly');
+    })
+    .catch(status => console.error(status))
+}
+
+
+
+const register = (history, email, name, password, password_confirmation) => {
     axios.post('/api/register', {
         email,
         name,
@@ -53,14 +70,19 @@ const register = (email, name, password, password_confirmation) => {
     .then(res => res.data)
     .then(res => {
         setToken(res.success.token);
-        redirect('/');
+        history.push('/');
+        setMessage('success', 'Registered successfuly');
     })
-    .catch(status => console.error(status))
+    .catch(() => {
+        $('input[name="password"]').val('');
+        $('input[name="password_confirmation"]').val('');
+        setMessage('error', 'Something went wrong. Try again');
+    });
 }
 
 
 
-const passwordForgot = email => {
+const passwordForgot = (email) => {
     axios.post('/api/password/forgot', { email }, {
         headers: {
             'Accept': 'application/json',
@@ -68,13 +90,13 @@ const passwordForgot = email => {
         }
     })
     .then(res => res.data)
-    .then(res => console.log(res))
-    .catch(status => console.error(status))
+    .then(res => setMessage('info', res.message))
+    .catch(() => setMessage('error', 'Something went wrong. Try again'));
 } 
 
 
 
-const passwordReset = (password, password_confirmation, email, token) => {
+const passwordReset = (history, password, password_confirmation, email, token) => {
     axios.post('/api/password/reset', {
         password,
         password_confirmation,
@@ -87,8 +109,25 @@ const passwordReset = (password, password_confirmation, email, token) => {
         }
     })
     .then(res => res.data)
-    .then(() => redirect('/auth/login'))
-    .catch(status => console.error(status))
+    .then(() => {
+        history.push('/auth/login');
+        setMessage('success', 'Your password was updated');
+    })
+    .catch(() => setMessage('error', 'Your data are invalid'));
+}
+
+
+
+const passwordFind = (history, token) => {
+    return new Promise(resolve => {
+        axios.get('/api/password/find/' + token)
+        .then(res => res.data)
+        .then(res => resolve(res))
+        .catch(() => {
+            history.push('/');
+            setMessage('error', 'Token does not exist');
+        })
+    })
 }
 
 
@@ -108,23 +147,6 @@ const getUser = token => {
 
 
 
-const logoutUser = token => {
-    fetch('http://127.0.0.1:8000/api/logout', {
-        headers: { 
-            "Authorization": `Bearer ${token}` 
-        }
-    })
-    .then(res => res.json())
-    .then(() => {
-        deleteToken();
-        setMessageAfterRedirect('success', 'Logout successfuly');
-        redirect('/');
-    })
-    .catch(status => console.error(status))
-}
-
-
-
 const fetchCategories = () => {
     return new Promise(resolve => {
         axios.get('/api/categories')
@@ -136,7 +158,7 @@ const fetchCategories = () => {
 
 
 
-const postPlace = (data, token) => {
+const postPlace = (history, data, token) => {
     delete data.address;
     delete data.country;
     axios.post('/api/places', data, {
@@ -146,14 +168,15 @@ const postPlace = (data, token) => {
     })
     .then(res => res.data)
     .then(res => {
-        redirect('/');
+        history.push('/');
+        setMessage('success', res.success);
     })
-    .catch(console.error);
+    .catch(() => setMessage('error', 'Something went wrong. Try again'));
 }
 
 
 
-const putPlace = (data, token, id) => {
+const putPlace = (history, data, token, id) => {
     delete data.address;
     delete data.country;
     axios.put(`/api/places/${id}`, data, {
@@ -162,25 +185,27 @@ const putPlace = (data, token, id) => {
         }
     })
     .then(res => res.data)
-    .then(() => {
-        redirect('/');
-        setMessage('success', 'Place updated successfuly');
+    .then(res => {
+        history.push('/');
+        setMessage('success', res.success);
     })
-    .catch(console.error);
+    .catch(() => setMessage('error', 'Something went wrong. Try again'));
 }
 
 
 
-const deletePlace = (id, token) => {
+const deletePlace = (history, id, token) => {
     axios.delete(`/api/places/${id}`, {
         headers: {
             "Authorization": `Bearer ${token}`
         }
     })
+    .then(res => res.data)
     .then(res => {
-        redirect('/');
+        history.push('/');
+        setMessage('success', res.success);
     })
-    .catch(console.error);
+    .catch(() => setMessage('error', 'Something went wrong. Try again'));
 }
 
 
@@ -224,6 +249,7 @@ export {
     register,
     passwordForgot,
     passwordReset,
+    passwordFind,
     getUser,
     logoutUser,
     fetchCategories,

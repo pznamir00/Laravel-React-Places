@@ -3,7 +3,7 @@ import { getToken } from '../../../functions';
 
 const Logout = props => {
     let token = getToken();
-    logoutUser(token);
+    logoutUser(props.history, token);
     return null;
 }
 
