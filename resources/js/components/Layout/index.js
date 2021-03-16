@@ -3,6 +3,7 @@ import { getUser } from '../../api';
 import { getToken } from '../../functions';
 import {withRouter} from 'react-router'
 import HamburgerMenu from 'react-hamburger-menu';
+import { Link } from 'react-router-dom';
 import './style.scss';
 
 
@@ -29,7 +30,7 @@ const Header = props => {
     return(
         <header>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand ml-lg-5 pl-5" href="/">Logo</a>
+                <Link className="navbar-brand ml-lg-5 pl-5" to="/">Logo</Link>
                 <HamburgerMenu
                     isOpen={isOpen}
                     menuClicked={() => setOpen(!isOpen)}
@@ -46,30 +47,30 @@ const Header = props => {
                     <div className="ml-auto mr-5 pr-5">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item">
-                                <a className="nav-link" href="/contact">Contact</a>
+                                <Link className="nav-link" to="/contact">Contact</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/about-us">About Us</a>
+                                <Link className="nav-link" to="/about-us">About Us</Link>
                             </li>
                             {loaded &&
                                 <React.Fragment>
                                     {user &&
                                         <React.Fragment>
                                             <li className="nav-item">
-                                                <a className="nav-link" href="/account">{user.name}</a>
+                                                <Link className="nav-link" to="/account">{user.name}</Link>
                                             </li>
                                             <li className="nav-item">
-                                                <a className="nav-link" href="/auth/logout">Logout</a>
+                                                <Link className="nav-link" to="/auth/logout">Logout</Link>
                                             </li>
                                         </React.Fragment>
                                     }
                                     {!user &&
                                         <React.Fragment>
                                             <li className="nav-item">
-                                                <a className="nav-link" href="/auth/login">Sign in</a>
+                                                <Link className="nav-link" to="/auth/login">Sign in</Link>
                                             </li>
                                             <li className="nav-item">
-                                                <a className="nav-link" href="/auth/register">Sign up</a>
+                                                <Link className="nav-link" to="/auth/register">Sign up</Link>
                                             </li>
                                         </React.Fragment>
                                     }
@@ -92,11 +93,11 @@ const Footer = () => {
         <footer>
             <div className="d-flex justify-content-around">
                 <div className="mt-3">
-                    <a href="/"><i className="fa fa-home mr-3"></i>Home</a>
+                    <Link to="/"><i className="fa fa-home mr-3"></i>Home</Link>
                     <br/>
-                    <a href="/contact"><i className="fa fa-envelope mr-3"></i>Contact</a>
+                    <Link to="/contact"><i className="fa fa-envelope mr-3"></i>Contact</Link>
                     <br/>
-                    <a href="/about-us"><i className="fa fa-info mr-3 mb-4"></i>About us</a>
+                    <Link to="/about-us"><i className="fa fa-info mr-3 mb-4"></i>About us</Link>
                 </div>
                 <div className="mt-2">
                     <a href="#"><i className="fab fa-linkedin-in"></i></a>

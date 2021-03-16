@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { register } from '../../../api';
+import { validateEmail } from '../../../functions';
+import { Link } from 'react-router-dom';
 
 
 const Register = props => {
@@ -30,8 +32,12 @@ const Register = props => {
         );
     }
 
+    let emailIsValid = validateEmail(data.email) ? 'is-valid' : '';
+    let nameIsValid = data.name.length !== 0 ? 'is-valid' : '';
+    let passwordsAreValid = (data.password.length !== 0 && data.password === data.password_confirmation) ? 'is-valid' : '';
     return(
-        <div>
+        <div className="card p-5">
+            <h1 className="mb-5 text-center">Create an account</h1>
             <form onSubmit={onSubmitHandle}>
                 <label>
                     Email
@@ -39,7 +45,7 @@ const Register = props => {
                         name="email"
                         type="email"
                         onChange={onChangeHandle}
-                        className="form-control"
+                        className={`form-control ${emailIsValid}`}
                     />
                 </label>
                 <label>
@@ -48,7 +54,7 @@ const Register = props => {
                         name="name"
                         type="text"
                         onChange={onChangeHandle}
-                        className="form-control"
+                        className={`form-control ${nameIsValid}`}
                     />
                 </label>
                 <label>
@@ -57,7 +63,7 @@ const Register = props => {
                         name="password"
                         type="password"
                         onChange={onChangeHandle}
-                        className="form-control"
+                        className={`form-control ${passwordsAreValid}`}
                     />
                 </label>
                 <label>
@@ -66,13 +72,16 @@ const Register = props => {
                         name="password_confirmation"
                         type="password"
                         onChange={onChangeHandle}
-                        className="form-control"
+                        className={`form-control ${passwordsAreValid}`}
                     />
                 </label>
                 <button
                     type="submit"
-                    className="btn btn-primary"
+                    className="btn btn-primary m-2 mt-4"
                 >Register</button>
+                <Link to="/auth/login" className="ml-5">
+                    Do you have an account? Let's login
+                </Link>
             </form>
         </div>
     )
