@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import L from 'leaflet';
-import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet';
 import { getPlaces, fetchCategories } from '../../../api';
+import './style.scss';
 
 export default class Home extends Component{
     
@@ -11,6 +11,11 @@ export default class Home extends Component{
             places: [],
             geocoder: L.Control.Geocoder.nominatim(),
             categories: [],
+            markerIcon: L.icon({ 
+                iconUrl: '/marker.png',
+                iconSize: [38, 40],
+                iconAnchor: [19, 47]
+            }),
             filters: {
                 createdFrom: '',
                 createdTo: '',
@@ -37,7 +42,7 @@ export default class Home extends Component{
                 'className' : 'custom'
                 }
                 return (
-                    L.marker([lat, lon]).bindTooltip('TEST', {
+                    L.marker([lat, lon], {icon: this.state.markerIcon}).bindTooltip('TEST', {
                         permanent: true, 
                         direction: 'right'
                     }).bindPopup(popupContent, popupOptions).openPopup().addTo(this.map)

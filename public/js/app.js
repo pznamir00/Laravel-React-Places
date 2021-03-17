@@ -7357,6 +7357,25 @@ exports.push([module.i, ".place {\n  color: #222;\n  text-align: center;\n}\n.pl
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/components/Pages/Home/style.scss":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/components/Pages/Home/style.scss ***!
+  \******************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/components/Pages/OnePlace/style.scss":
 /*!**********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./resources/js/components/Pages/OnePlace/style.scss ***!
@@ -102929,8 +102948,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_leaflet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-leaflet */ "./node_modules/react-leaflet/esm/index.js");
-/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../api */ "./resources/js/api/index.js");
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../api */ "./resources/js/api/index.js");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.scss */ "./resources/js/components/Pages/Home/style.scss");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -102979,6 +102999,11 @@ var Home = /*#__PURE__*/function (_Component) {
       places: [],
       geocoder: leaflet__WEBPACK_IMPORTED_MODULE_1___default.a.Control.Geocoder.nominatim(),
       categories: [],
+      markerIcon: leaflet__WEBPACK_IMPORTED_MODULE_1___default.a.icon({
+        iconUrl: '/marker.png',
+        iconSize: [38, 40],
+        iconAnchor: [19, 47]
+      }),
       filters: {
         createdFrom: '',
         createdTo: '',
@@ -102996,7 +103021,7 @@ var Home = /*#__PURE__*/function (_Component) {
     value: function fetchPlaces() {
       var _this2 = this;
 
-      Object(_api__WEBPACK_IMPORTED_MODULE_3__["getPlaces"])(this.state.filters).then(function (places) {
+      Object(_api__WEBPACK_IMPORTED_MODULE_2__["getPlaces"])(this.state.filters).then(function (places) {
         return _this2.setState({
           places: places
         });
@@ -103010,7 +103035,9 @@ var Home = /*#__PURE__*/function (_Component) {
             'maxWidth': '200',
             'className': 'custom'
           };
-          return leaflet__WEBPACK_IMPORTED_MODULE_1___default.a.marker([lat, lon]).bindTooltip('TEST', {
+          return leaflet__WEBPACK_IMPORTED_MODULE_1___default.a.marker([lat, lon], {
+            icon: _this2.state.markerIcon
+          }).bindTooltip('TEST', {
             permanent: true,
             direction: 'right'
           }).bindPopup(popupContent, popupOptions).openPopup().addTo(_this2.map);
@@ -103023,7 +103050,7 @@ var Home = /*#__PURE__*/function (_Component) {
       var _this3 = this;
 
       this.fetchPlaces();
-      Object(_api__WEBPACK_IMPORTED_MODULE_3__["fetchCategories"])().then(function (categories) {
+      Object(_api__WEBPACK_IMPORTED_MODULE_2__["fetchCategories"])().then(function (categories) {
         return _this3.setState({
           categories: categories
         });
@@ -103114,6 +103141,36 @@ var Home = /*#__PURE__*/function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 
+
+/***/ }),
+
+/***/ "./resources/js/components/Pages/Home/style.scss":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/Pages/Home/style.scss ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader!../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!./style.scss */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./resources/js/components/Pages/Home/style.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -103278,7 +103335,7 @@ var OnePlace = function OnePlace(props) {
   };
 
   var _deletePlace = function _deletePlace() {
-    return Object(_api__WEBPACK_IMPORTED_MODULE_3__["deletePlace"])(place.id, token);
+    return Object(_api__WEBPACK_IMPORTED_MODULE_3__["deletePlace"])(props.history, place.id, token);
   };
 
   if (!place) {

@@ -106,7 +106,7 @@ class PlaceController extends Controller
     public function delete($id)
     {
         $place = Place::findOrFail($id);
-        if($place->author->id === Auth::user()->id){
+        if($place->author->id !== Auth::user()->id){
             return response()->json(['error' => 'You are unauthorizated for this place'], 401);
         }
         $place->delete();

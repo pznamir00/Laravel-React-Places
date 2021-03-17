@@ -54,7 +54,7 @@ const OnePlace = props => {
         setIsViewerOpen(false);
     };
 
-    const _deletePlace = () => deletePlace(place.id, token);
+    const _deletePlace = () => deletePlace(props.history, place.id, token);
 
 
     if(!place){
