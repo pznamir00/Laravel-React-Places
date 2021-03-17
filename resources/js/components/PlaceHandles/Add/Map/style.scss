@@ -1,4 +1,15 @@
 .leaflet-container{
-    height: 500px;
+    height: 300px;
     z-index: 1;
+}
+
+.sc-AxirZ{
+    width: calc(100% - 18px);
+    border: solid #a0a0a0 1px;
+    margin-top: 30px;
+    margin-left: 9px;
+
+    .sc-AxhCb{
+        border: none;
+    }
 }

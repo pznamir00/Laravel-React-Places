@@ -122,8 +122,8 @@ export default class AddPlace extends Component{
         return(
             <div>
                 <form onSubmit={this.onSubmitHandle}>
-                    <label>
-                        Title
+                    <label className="mb-4">
+                        <i className="fa fa"></i>Title
                         <input 
                             name="title"
                             type="text"
@@ -132,47 +132,55 @@ export default class AddPlace extends Component{
                             defaultValue={this.state.data.title}
                         />                       
                     </label>
-                    <label>
-                        Slug
-                        <input 
-                            name="slug"
-                            type="text"
-                            className="form-control"
-                            onChange={this.onChangeHandle}
-                            defaultValue={this.state.data.slug}
-                        />                       
-                    </label>
-                    <label>
-                        Short Description
-                        <textarea
-                            name="short_description"
-                            className="form-control"
-                            onChange={this.onChangeHandle}
-                            defaultValue={this.state.data.short_description}
-                            maxLength="512"
-                        ></textarea>                       
-                    </label>
-                    <label>
-                        Category
-                        <select name="category_id" onChange={this.onChangeHandle}>
-                            <option value=''>Select...</option>
-                            {this.state.categories.map((category, key) => 
-                                <option 
-                                    key={key} 
-                                    value={category.id}
-                                    selected={category.id == this.state.data.category_id}
-                                >{category.name}</option>
-                            )}
-                        </select>                  
-                    </label>
-                    <div>
-                        <Map 
-                            updateLocation={this.updateLocation} 
-                            lat={this.state.data.lat} 
-                            lon={this.state.data.lon}
-                        />
-                        <p>Address: {this.state.data.address}</p>
-                        <p>Country: {this.state.data.country}</p>
+                    <div className="d-flex justify-content-between mb-4">
+                        <label style={{width:'50%'}}>
+                            Slug
+                            <input 
+                                name="slug"
+                                type="text"
+                                className="form-control"
+                                onChange={this.onChangeHandle}
+                                defaultValue={this.state.data.slug}
+                            />                       
+                        </label>
+                        <label style={{width:'50%'}}>
+                            Category
+                            <select name="category_id" onChange={this.onChangeHandle} className="form-control">
+                                <option value=''>Select...</option>
+                                {this.state.categories.map((category, key) => 
+                                    <option 
+                                        key={key} 
+                                        value={category.id}
+                                        selected={category.id == this.state.data.category_id}
+                                    >{category.name}</option>
+                                )}
+                            </select>                  
+                        </label>
+                    </div>
+                    <div className="container m-0 p-0">
+                        <div className="row">
+                            <div className="col-12 col-md-6">
+                                <label>
+                                    Short Description
+                                    <textarea
+                                        name="short_description"
+                                        className="form-control"
+                                        onChange={this.onChangeHandle}
+                                        defaultValue={this.state.data.short_description}
+                                        maxLength="512"
+                                        style={{height:'300px'}}
+                                    ></textarea>                       
+                                </label>
+                            </div>
+                            <div className="col-12 col-md-6">
+                                <p className="mb-0">Address: {this.state.data.address} {this.state.data.address ? ', ' : ''} {this.state.data.country}</p>
+                                <Map 
+                                    updateLocation={this.updateLocation} 
+                                    lat={this.state.data.lat} 
+                                    lon={this.state.data.lon}
+                                />
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <Images
@@ -182,7 +190,7 @@ export default class AddPlace extends Component{
                     </div>
                     <button
                         type="submit"
-                        className="btn btn-primary"
+                        className="btn btn-primary m-2"
                     >Save</button>
                 </form>
             </div>

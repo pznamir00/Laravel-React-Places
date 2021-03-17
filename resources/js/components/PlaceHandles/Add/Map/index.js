@@ -37,8 +37,9 @@ export default class Map extends React.Component{
 
     render(){
         const MapMarkHandle = this.mapMarkHandle.bind(this);
+        const center = this.props.lat ? [this.props.lat, this.props.lon] : [51,14];
         return (
-            <MapContainer center={[51,14]} zoom={13} scrollWheelZoom={false}>
+            <MapContainer center={center} zoom={13} scrollWheelZoom={false}>
                 <MapMarkHandle/>
                 <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

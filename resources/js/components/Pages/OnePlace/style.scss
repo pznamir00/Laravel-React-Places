@@ -1,0 +1,12 @@
+#ReactSimpleImageViewer{
+    z-index: 100;
+}
+
+.bottom-controls{
+    position: absolute;
+    bottom: 0;
+
+    @media(max-width: 992px){
+        position: static;
+    }
+}

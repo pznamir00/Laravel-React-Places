@@ -4,7 +4,7 @@ import { getOnePlace, getUser, deletePlace, getAddress } from '../../../api';
 import ImageViewer from 'react-simple-image-viewer';
 import { getToken } from '../../../functions';
 import { Link } from 'react-router-dom';
-import './style.css';
+import './style.scss';
 
 const OnePlace = props => {
     
@@ -63,21 +63,22 @@ const OnePlace = props => {
     
     return(
         <div className='mt-5 pt-5'>
-            <div className="d-flex justify-content-between">
+            <div className="d-flex justify-content-between text-field">
                 <h3>{place.title}</h3>
-                <p className="mt-0">{place.category && <p><b>Category:</b> {place.category.name}</p>}</p>
-                {(user && user.id === place.author.id) &&
-                    <div className='mt-0'>
-                        <Link className="btn btn-primary mr-1" to={`/places/management/edit/${place.slug}`}><i className="fa fa-edit"></i></Link>
-                        <button className='btn btn-danger rounded-0' onClick={_deletePlace}><i className="fa fa-trash"></i></button>
-                    </div>
-                }
+                <div>
+                    {(user && user.id === place.author.id) &&
+                        <div className='mt-0 ml-4 d-inline-block'>
+                            <Link className="btn btn-primary mr-1" to={`/places/management/edit/${place.slug}`}><i className="fa fa-edit"></i></Link>
+                            <button className='btn btn-danger rounded-0' onClick={_deletePlace}><i className="fa fa-trash"></i></button>
+                        </div>
+                    }
+                </div>
             </div>
-            <hr style={{ marginTop: '-10px' }}/>
+            <hr style={{ marginTop: '0px' }}/>
             <div className="row mt-2">
                 <div className="col-12 col-lg-6">
                     <p>{place.short_description}</p>
-                    <div style={{position: 'absolute', bottom: '0'}}>
+                    <div className="bottom-controls">
                         <div className='d-flex justify-content-around mb-4'>
                             {place.images.map((img, key) => 
                                 <img 
@@ -96,11 +97,12 @@ const OnePlace = props => {
                                 />
                             )}
                         </div>
+                        {place.category && <React.Fragment><b>Category:</b> {place.category.name}</React.Fragment>}<br/>
                         <b>Added at: </b>{place.created_at}<br/>
                         <b>Address: </b>{place.address.house_number} {place.address.road} {place.address.country}
                     </div>
                 </div>
-                <div className="col-12 col-lg-6">
+                <div className="col-12 col-lg-6 mt-5 mt-md-0">
                     <MapContainer center={[place.location.lat, place.location.lon]} zoom={13} scrollWheelZoom={false}>
                         <TileLayer
                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
