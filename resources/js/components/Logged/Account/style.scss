@@ -1,0 +1,26 @@
+@import '../../../../sass/variables';
+
+.place{
+    color: #222;
+    text-align: center;
+    &:hover{
+        text-decoration: none;
+        color: #111;
+    }
+
+    .edit-control{
+        background: $super-color;
+        width: 30px;
+        height: 30px;
+        color: #f0f0f0;
+        text-align: center;
+        float: right;
+        position: relative;
+        top: 30px;
+        padding-top:4px;
+        padding-left: 6px;
+        &:hover{
+            background: $sub-super-color;
+        }
+    }
+}

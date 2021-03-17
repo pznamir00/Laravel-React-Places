@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import { getOnePlace, getUser, deletePlace, getAddress } from '../../../api';
 import ImageViewer from 'react-simple-image-viewer';
 import { getToken } from '../../../functions';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 const OnePlace = props => {
@@ -61,50 +62,53 @@ const OnePlace = props => {
     }
     
     return(
-        <div>
-            <h1>Title: {place.title}</h1>
-            <p>Description: {place.short_description}</p>
-            <p>Created at: {place.created_at}</p>
-            {place.category && 
-                <p>Category: {place.category.name}</p>
-            }
-            <div>
-                {place.address.house_number}
-                {place.address.road}
-                {place.address.country}
-            </div>
-            <MapContainer center={[51,14]} zoom={13} scrollWheelZoom={false}>
-                <TileLayer
-                    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                <Marker position={[place.location.lat, place.location.lon]}></Marker>
-            </MapContainer>
-            <div className='d-flex justify-content-around'>
-                {place.images.map((img, key) => 
-                    <img 
-                        src={img.name} 
-                        key={key} 
-                        alt="Pic"
-                        className="place-img"
-                        onClick={ () => openImageViewer(key) }
-                    />
-                )}
-                {isViewerOpen && (
-                    <ImageViewer
-                        src={ place.images.map(img => img.name) }
-                        currentIndex={ currentImage }
-                        onClose={ closeImageViewer }
-                    />
-                )}
-            </div>
-            <div>
+        <div className='mt-5 pt-5'>
+            <div className="d-flex justify-content-between">
+                <h3>{place.title}</h3>
+                <p className="mt-0">{place.category && <p><b>Category:</b> {place.category.name}</p>}</p>
                 {(user && user.id === place.author.id) &&
-                    <div>
-                        <a href={`/places/management/edit/${place.slug}`}>Edit</a>
-                        <button className='btn btn-danger' onClick={_deletePlace}>Delete</button>
+                    <div className='mt-0'>
+                        <Link className="btn btn-primary mr-1" to={`/places/management/edit/${place.slug}`}><i className="fa fa-edit"></i></Link>
+                        <button className='btn btn-danger rounded-0' onClick={_deletePlace}><i className="fa fa-trash"></i></button>
                     </div>
                 }
+            </div>
+            <hr style={{ marginTop: '-10px' }}/>
+            <div className="row mt-2">
+                <div className="col-12 col-lg-6">
+                    <p>{place.short_description}</p>
+                    <div style={{position: 'absolute', bottom: '0'}}>
+                        <div className='d-flex justify-content-around mb-4'>
+                            {place.images.map((img, key) => 
+                                <img 
+                                    src={img.name} 
+                                    key={key} 
+                                    alt="Pic"
+                                    className="img-thumbnail"
+                                    onClick={ () => openImageViewer(key) }
+                                />
+                            )}
+                            {isViewerOpen && (
+                                <ImageViewer
+                                    src={ place.images.map(img => img.name) }
+                                    currentIndex={ currentImage }
+                                    onClose={ closeImageViewer }
+                                />
+                            )}
+                        </div>
+                        <b>Added at: </b>{place.created_at}<br/>
+                        <b>Address: </b>{place.address.house_number} {place.address.road} {place.address.country}
+                    </div>
+                </div>
+                <div className="col-12 col-lg-6">
+                    <MapContainer center={[place.location.lat, place.location.lon]} zoom={13} scrollWheelZoom={false}>
+                        <TileLayer
+                            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        />
+                        <Marker position={[place.location.lat, place.location.lon]}></Marker>
+                    </MapContainer>
+                </div>
             </div>
         </div>
     )

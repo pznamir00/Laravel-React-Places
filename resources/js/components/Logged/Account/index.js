@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getUser, getPlaces } from '../../../api';
 import { getToken } from '../../../functions';
 import { Link } from 'react-router-dom';
+import './style.scss';
 
 
 const Account = () => {
@@ -48,17 +49,12 @@ const Account = () => {
             </div>
             <hr/>
             <div className='container'>
-                <div className='row-fluid'>
+                <div className='row'>
                     {places.map((place, key) => 
-                        <Link to={`/places/${place.slug}`} key={key}>
-                            <div 
-                                style={{
-                                    backgroundImage: `url('/${place.images[0].name}')`,
-                                }}
-                                className="text-center"
-                            >
-                                {place.title}
-                            </div>
+                        <Link to={`/places/${place.slug}`} key={key} className='place col-6 col-md-4 col-xl-3'>
+                            <Link to={`/places/management/edit/${place.slug}`} className="edit-control"><i className="fas fa-edit mr-2"></i></Link>
+                            <img src={`/${place.images[0].name}`} className="img-thumbnail"/>
+                            <p>{place.title}</p>
                         </Link>
                     )}
                 </div>
