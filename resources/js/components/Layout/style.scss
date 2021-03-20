@@ -3,23 +3,27 @@
 header{
     position: fixed;
     width: 100vw;
+    height: 40px;
     top: 0;
     left: 0;
     z-index: 100;
-    
+    border-bottom: 1ps solid #e0e0e0;    
     .navbar{
         background-color: $bg-color !important;
+    }
+
+    .logo{
+        font-family: 'Exo', sans-serif;
     }
 
     .collapse a{
         font-weight: bold;
         padding: 5px;
-        border: 2px solid transparent;
-        border-radius: 20px;
+        border-bottom: 4px solid transparent;
         margin: 0px 10px;
 
         &:hover{
-            border-color: $super-color;
+            border-color: $sub-super-color;
             background: $super-color;
             color: $bg-color !important;
             transition: 0.3s;
@@ -28,6 +32,8 @@ header{
 }
 
 footer{
+    position: relative;
+    bottom: 0;
     background: #171717;
     width: 100%;
     color: #f0f0f0;

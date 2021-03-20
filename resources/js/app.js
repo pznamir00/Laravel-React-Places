@@ -9,7 +9,7 @@ import Contact from './components/Pages/Contact';
 import AboutUs from './components/Pages/AboutUs';
 import Home from './components/Pages/Home';
 import OnePlace from './components/Pages/OnePlace';
-import Account from './components/Logged/Account';
+import Account from './components/Account';
 import Error404 from './components/Errors/404';
 import { AddPlace, EditPlace } from './components/PlaceHandles';
 import NotificationContainer from 'react-notifications/lib/NotificationContainer';
@@ -22,12 +22,13 @@ const App = () => {
           <Header/>
           <NotificationContainer/>
           <main>
+            <div id="cover"></div>
             <Switch>                
                     {/* GUEST */}
                     <GuestRoute path='/auth/login' component={Login} />
                     <GuestRoute path='/auth/register' component={Register} />
-                    <GuestRoute path='/auth/password/forgot' component={PasswordForgot} />
-                    <GuestRoute path='/auth/password/reset/:token' component={PasswordReset} />
+                    <Route path='/auth/password/forgot' component={PasswordForgot} />
+                    <Route path='/auth/password/reset/:token' component={PasswordReset} />
 
                     {/* LOGGED */}
                     <LoggedRoute path='/account' component={Account} />

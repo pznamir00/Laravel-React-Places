@@ -1,1 +1,227 @@
 @import '../../../../sass/variables';
+
+
+#content{
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    height: 500px;
+    border: none;
+    z-index: 1;
+    overflow: hidden;
+
+    .popup{
+        text-align: center;
+        color: $super-color;
+        
+        p{
+            color: $sub-super-color;
+        }
+        &:hover{
+            text-decoration: none;
+        }
+        div{
+            height: 100px;
+            width: 100px;
+            background-position: center;
+            background-size: auto auto;
+            background-repeat: no-repeat;
+        }
+    }
+
+    @media(max-width: 772px){
+        height: 800px;
+    }
+
+    .h{
+        color: $super-color;
+        margin-right: 40px;
+    }
+
+    #map{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        right: 0;
+        @media(max-width: 580px){
+            margin-top: 210px;
+        }
+        @media(max-width: 772px) and (min-width: 580px){
+            margin-top: 170px;
+        }
+    }
+
+    #filters{
+        background: $super-color;
+        height: 100%;
+        color: $bg-color;
+        border-top: 15px solid $sub-super-color;
+        padding-bottom: 10px;
+        @media(min-width: 770px){
+            position: absolute;
+        }
+
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: transparent;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='blue' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+            background-repeat: no-repeat;
+            background-position-x: 100%;
+            background-position-y: 5px;
+            border: none;
+            border-bottom: 3px solid $sub-super-color;
+            width: 100%;
+            padding: 4px;
+            color: #cecccc;
+        }
+
+        .fa-calendar{
+            color: $sub-super-color;
+            margin-right: 10px !important;
+            margin-left: 3px;
+            margin-top: 12px;
+            position: absolute;
+        }
+
+        .fa-search{
+            color: $sub-super-color;
+            margin-right: 3px;
+        }
+
+        .form-group{
+            @media(max-width: 992px){
+                margin-bottom: -10px;
+            }
+        }
+
+        input[name='keywords']{
+            color: $bg-color;
+            &::placeholder{
+                color: #cecccc;
+            }
+        }
+
+        input[type='date']{
+            text-align: right;
+            @media(min-width:992px){
+                padding-left: 30px;
+            }
+        }
+
+        .dates{
+            margin-bottom: -10px;
+            .mx-0{
+                @media(max-width:772px){
+                    margin-top: -20px;
+                }
+            }
+            span{
+                @media(max-width: 772px){
+                    position: relative;
+                    top: 30px;
+                }
+                @media(max-width: 770px) and (min-width: 580px){
+                    left: -40px;
+                }
+            }
+        }
+
+        .btn-primary{
+            background: $sub-super-color !important;
+            margin-top: 40px !important;
+            @media(max-width: 772px){
+                margin-top: 17px !important;
+            }
+        }
+    }
+
+    .form-control{
+        border: none;
+        border-bottom: 3px solid $sub-super-color;
+        width: 100% !important;
+        margin-bottom: 20px;
+        background: transparent;
+    }
+}
+
+
+
+
+
+
+$dark-col: #333;
+
+section:nth-child(2){
+    width: calc(100% + 60px);
+    height: 100%;
+    margin-left: -30px;
+    background-color: $dark-col;
+    padding: 0px 30px 200px;
+
+    .mini-eye{
+        background: $super-color;
+        width: 30px;
+        height: 30px;
+        color: $dark-col;
+        text-align: center;
+        float: right;
+        position: relative;
+        top: 30px;
+        padding-top:4px;
+        padding-left: 6px;
+        z-index: 10;
+    }
+
+    #crooked-bg{
+        position: relative;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 500px 0 0 calc(100vw - 15px);
+        border-color: transparent transparent transparent $dark-col;
+        left: -30px;
+        top: -499px;
+    }
+    
+    #newest-places{
+        width: 100%;
+        max-width: 800px;
+        overflow: hidden;
+        margin-top: -500px;
+    
+        h1{
+            color: $super-color;
+            margin-top: 50px;
+            margin-bottom: 40px;
+            @media(max-width: 770px){
+                margin-top: 200px;
+            }
+        }
+    
+        .square {
+            text-align: center;
+            padding: 0;
+            
+            img{
+                width: 100%;
+                height: 100%;
+                filter: brightness(20%);
+                &:hover{
+                    filter: brightness(40%);
+                }
+            }
+    
+            h6{
+                position: relative;
+                top: -30px;
+                color: $sub-super-color;
+                font-weight: bold;
+            }
+    
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+}

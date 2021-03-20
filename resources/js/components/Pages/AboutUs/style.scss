@@ -1,0 +1,15 @@
+@import '../../../../sass/variables';
+
+
+#about-us-container{
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+
+    h2{
+        color: $bg-color;
+        background-color: $super-color;
+        border-top: 10px solid $sub-super-color;
+        padding: 15px;
+    }
+}

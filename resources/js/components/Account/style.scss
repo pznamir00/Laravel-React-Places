@@ -1,0 +1,64 @@
+@import '../../../sass/variables';
+
+
+#dashboard{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 1px solid #e0e0e0;
+
+    #panel{
+        background-color: #222;
+        color: #888;
+        padding: 10px;
+
+        div a{
+            display: block;
+            color: inherit;
+        }
+        div button{
+            display: block;
+            color: inherit;
+            border: none;
+            background-color: transparent;
+            padding: 0;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    #places{
+        text-align: center;
+
+        .just-paint{
+            color: $sub-super-color;
+        }
+    }
+
+    .place{
+        color: #222;
+        text-align: center;
+        &:hover{
+            text-decoration: none;
+            color: #111;
+        }
+    
+        .edit-control{
+            background: $super-color;
+            width: 30px;
+            height: 30px;
+            color: #f0f0f0;
+            text-align: center;
+            float: right;
+            position: relative;
+            top: 30px;
+            padding-top:4px;
+            padding-left: 6px;
+            &:hover{
+                background: $sub-super-color;
+            }
+        }
+    }
+}
+

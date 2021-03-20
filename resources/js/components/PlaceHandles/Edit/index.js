@@ -62,13 +62,15 @@ export default class EditPlace extends React.Component{
         })
     }
 
-    onSubmit(props, data){
-        putPlace(props, data, this.state.token, this.state.placeId);
+    onSubmit(data){
+        putPlace(this.props.history, data, this.state.token, this.state.placeId);
     }
 
     render(){
         if(!this.state.loaded){
-            return <div>Loading...</div>
+            return <div className="text-center pt-5 mt-5">
+                <i className="fas fa-circle-notch fa-spin"></i>
+            </div>
         }
         else{
             return(

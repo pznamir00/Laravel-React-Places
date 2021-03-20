@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { passwordReset, passwordFind } from '../../../api';
-
+import './style.scss';
 
 const PasswordReset = props => {
     
@@ -35,6 +35,7 @@ const PasswordReset = props => {
     const onSubmitHandle = e => {
         e.preventDefault();
         passwordReset(
+            props.history,
             data.password,
             data.password_confirmation,
             data.email,
@@ -44,26 +45,29 @@ const PasswordReset = props => {
 
     if(data.loaded){
         return(
-            <div>
+            <div id="reset-password-form">
+                <h3 className="title text-center mb-3">Reset your password</h3>
                 <form onSubmit={onSubmitHandle}>
-                    <label>
-                        New password
+                    <div className="mb-2 inner-addon right-addon">
+                        <i className="glyphicon fa fa-lock trailing"></i>
                         <input
                             name="password"
                             type="password"
-                            className="form-control"
+                            placeholder="Password"
                             onChange={onChangeHandle}
+                            className="form-control form-icon-trailing"
                         />
-                    </label>
-                    <label>
-                        Confirm password
+                    </div>
+                    <div className="mb-2 inner-addon right-addon">
+                        <i className="glyphicon fa fa-lock trailing"></i>
                         <input
                             name="password_confirmation"
                             type="password"
-                            className="form-control"
+                            placeholder="Password confirmation"
                             onChange={onChangeHandle}
+                            className="form-control form-icon-trailing"
                         />
-                    </label>
+                    </div>
                     <button
                         type="submit"
                         className="btn btn-primary"
@@ -73,7 +77,9 @@ const PasswordReset = props => {
         )
     }
     else{
-        return <p>Loading...</p>
+        return <div className="text-center pt-5 mt-5">
+            <i className="fas fa-circle-notch fa-spin"></i>
+        </div>
     }
 }
 

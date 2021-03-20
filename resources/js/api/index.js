@@ -82,7 +82,7 @@ const register = (history, email, name, password, password_confirmation) => {
 
 
 
-const passwordForgot = (email) => {
+const passwordForgot = email => {
     axios.post('/api/password/forgot', { email }, {
         headers: {
             'Accept': 'application/json',
@@ -189,7 +189,10 @@ const putPlace = (history, data, token, id) => {
         history.push('/');
         setMessage('success', res.success);
     })
-    .catch(() => setMessage('error', 'Something went wrong. Try again'));
+    .catch(status => {
+        console.error(status);
+        setMessage('error', 'Something went wrong. Try again');
+    });
 }
 
 
@@ -243,6 +246,41 @@ const getOnePlace = slug => {
 
 
 
+const postMessage = (history, data) => {
+    axios.post('api/contacts', data, {
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(res => res.data)
+    .then(res => {
+        history.push('/');
+        setMessage('success', res.success);
+    })
+    .catch(() => {
+        setMessage('error', 'Something went wrong. Try again');
+        $('input[name="email"]').val('');
+        $('input[name="subject"]').val('');
+        $('textarea[name="message"]').val('');
+    });
+}
+
+
+const deleteAccount = (history, token) => {
+    axios.delete('/api/users', {
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(res => {
+        deleteToken();
+        window.location.replace('/');
+    })
+    .catch(() => setMessage('error', 'Something went wrong'));
+}
+
+
+
 export {
     getAddress,
     login,
@@ -257,5 +295,7 @@ export {
     putPlace,
     deletePlace,
     getPlaces,
-    getOnePlace
+    getOnePlace,
+    postMessage,
+    deleteAccount
 }

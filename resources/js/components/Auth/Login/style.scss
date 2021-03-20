@@ -1,0 +1,48 @@
+@import '../../../../sass/variables';
+
+
+#login-bg{
+    width: calc(100% + 60px);
+    margin-left: -30px;
+    margin-top: -100px;
+    background-color: #222;
+    padding-top: 100px;
+    padding-bottom: 200px;
+
+    h1{
+        color: $sub-super-color;
+    }
+
+    .links{
+        text-align: center;
+        margin-top: 30px;
+        a{
+            color: $sub-super-color !important;
+        }
+    }
+}
+
+#login-form{
+    text-align: center;
+    margin-top: 20px;
+
+    a{
+        color: $sub-super-color;
+    }
+
+    .inner-addon { 
+        position: relative; 
+    }
+
+    .inner-addon .glyphicon {
+        position: absolute;
+        padding: 10px;
+        pointer-events: none;
+    }
+
+    .left-addon .glyphicon  { left:  0px;}
+    .right-addon .glyphicon { right: 0px;}
+
+    .left-addon input  { padding-left:  30px; }
+    .right-addon input { padding-right: 30px; }
+}

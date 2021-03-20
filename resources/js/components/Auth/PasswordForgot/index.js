@@ -2,38 +2,32 @@ import React, { useState } from 'react';
 import { passwordForgot } from '../../../api';
 
 
-const PasswordForgot = () => {
+const PasswordForgot = props => {
 
-    const [ data, setData ] = useState({
-        email: "",
-    });
+    const [ email, setEmail ] = useState("");
 
-    const onChangeHandle = e => {
-        const { value } = e.target;
-        setData({ email: value });
-    }
+    const onChangeEmail = e => setEmail(e.target.value);
 
     const onSubmitHandle = e => {
         e.preventDefault();
-        passwordForgot(this.props.history, data.email);
+        passwordForgot(email);
     }
 
     return(
-        <div>
-            Forgot Password?
+        <div style={{width: '80%', maxWidth: '700px'}} className="mx-auto mt-5 pt-5">
+            <h3 className="text-center mb-2"><i className="fas fa-lock mr-3"></i>Forgot Password?</h3>
             <form onSubmit={onSubmitHandle}>
-                <label>
-                    Email
-                    <input
-                        name="email"
-                        type="email"
-                        onChange={onChangeHandle}
-                        className="form-control"
-                    />
-                </label>
+                <input
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    onChange={onChangeEmail}
+                    className="form-control"
+                />
                 <button
                     type="submit"
-                    className="btn btn-primary"
+                    className="btn btn-primary mt-2"
+                    style={{width:'100%'}}
                 >Sent password reset link</button>
             </form>
         </div>

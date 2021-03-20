@@ -30,6 +30,7 @@ Route::middleware('auth:api')->group(function(){
     Route::post('/places', 'PlaceController@post');
     Route::put('/places/{id}', 'PlaceController@put');
     Route::delete('/places/{id}', 'PlaceController@delete');
+    Route::delete('/users', 'Auth\AccountController@delete');
 });
 
 

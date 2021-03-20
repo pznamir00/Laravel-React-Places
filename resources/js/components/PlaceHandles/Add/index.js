@@ -4,6 +4,8 @@ import Map from './Map';
 import Images from './Images';
 import { postPlace } from '../../../api';
 import { getToken } from '../../../functions';
+import CKEditor from "react-ckeditor-component";
+import './style.scss';
 
 export default class AddPlace extends Component{
     
@@ -52,6 +54,7 @@ export default class AddPlace extends Component{
     async componentDidMount(){
         let categories = await fetchCategories();
         this.setState({ categories });
+        CKEDITOR.replace('short_description');
     }
 
     
@@ -113,14 +116,17 @@ export default class AddPlace extends Component{
         if(!this.props.type){
             postPlace(this.props.history, data, getToken());
         } else {
-            this.props.onSubmit(this.props.history, data);
+            this.props.onSubmit(data);
         }
     }
 
 
     render(){
+        console.log(this.state.data.short_description);
+        const title = this.props.type === "EDIT" ? "Edit place" : "Add new place";
         return(
-            <div>
+            <div className="pb-5 mb-5">
+                <h3 className="ml-2 mb-5 title">{title}</h3>
                 <form onSubmit={this.onSubmitHandle}>
                     <label className="mb-4">
                         <i className="fa fa"></i>Title
@@ -157,22 +163,24 @@ export default class AddPlace extends Component{
                             </select>                  
                         </label>
                     </div>
-                    <div className="container m-0 p-0">
+                    <div className="container m-0 p-0" style={{maxWidth: '100%'}}>
                         <div className="row">
                             <div className="col-12 col-md-6">
                                 <label>
                                     Short Description
-                                    <textarea
-                                        name="short_description"
-                                        className="form-control"
-                                        onChange={this.onChangeHandle}
-                                        defaultValue={this.state.data.short_description}
-                                        maxLength="512"
-                                        style={{height:'300px'}}
-                                    ></textarea>                       
+                                    <CKEditor 
+                                        activeClass="p10" 
+                                        content={this.state.data.short_description} 
+                                        events={{ "change": e => this.onChangeHandle({
+                                            target: {
+                                                name: 'short_description',
+                                                value: e.editor.getData()
+                                            }
+                                        }) }}
+                                    />                     
                                 </label>
                             </div>
-                            <div className="col-12 col-md-6">
+                            <div className="col-12 col-md-6 mt-3 mt-md-0">
                                 <p className="mb-0">Address: {this.state.data.address} {this.state.data.address ? ', ' : ''} {this.state.data.country}</p>
                                 <Map 
                                     updateLocation={this.updateLocation} 

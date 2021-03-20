@@ -1,12 +1,34 @@
-#ReactSimpleImageViewer{
-    z-index: 100;
-}
+@import '../../../../sass/variables';
 
-.bottom-controls{
-    position: absolute;
-    bottom: 0;
 
-    @media(max-width: 992px){
-        position: static;
+#one-place{
+
+    #ReactSimpleImageViewer{
+        z-index: 100;
+    }
+    
+    .bottom-controls{
+        position: absolute;
+        bottom: 0;
+    
+        @media(max-width: 992px){
+            position: static;
+        }
+    }
+
+    .info-content{
+        @media(min-width: 992px){
+            height: 500px;
+
+            .img-thumbnail{
+                width: 200px;
+            }
+        }
+    }
+
+    .leaflet-container{
+        @media(min-width: 992px){
+            height: 480px;
+        }
     }
 }

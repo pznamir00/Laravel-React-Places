@@ -5,6 +5,7 @@ import {withRouter} from 'react-router'
 import HamburgerMenu from 'react-hamburger-menu';
 import { Link } from 'react-router-dom';
 import './style.scss';
+import $ from 'jquery';
 
 
 const Header = props => {
@@ -12,7 +13,11 @@ const Header = props => {
     const [loaded, setLoaded] = useState(false);
     const [isOpen, setOpen] = useState(false);
     const collapse = useRef();
-    props.history.listen(() => setLoaded(false));
+    props.history.listen(() => {
+        setLoaded(false);
+        setOpen(false);
+
+    });
 
     useEffect(() => {
         let token = getToken();
@@ -23,14 +28,22 @@ const Header = props => {
     }, [loaded]);
 
     useEffect(() => {
-        if(isOpen) collapse.current.classList.add('show');
-        else collapse.current.classList.remove('show');
+        if(isOpen) {
+            collapse.current.classList.add('show');
+            $('#cover').css({ display: "block" }).on('click', () => setOpen(!isOpen));           
+        }
+        else {
+            collapse.current.classList.remove('show');
+            $('#cover').css({ display: "none" }).off('click');
+        }
     }, [isOpen])
 
     return(
         <header>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <Link className="navbar-brand ml-lg-5 pl-5" to="/">Logo</Link>
+                <Link className="navbar-brand ml-lg-5 pl-5" to="/">
+                    <h2 className="logo">Compass</h2>
+                </Link>
                 <HamburgerMenu
                     isOpen={isOpen}
                     menuClicked={() => setOpen(!isOpen)}
@@ -44,32 +57,32 @@ const Header = props => {
                     className="border-none mr-5 d-lg-none"
                 />
                 <div ref={collapse} className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <div className="ml-auto mr-5 pr-5">
+                    <div className="ml-auto mr-3 mr-lg-5 pr-lg-5">
                         <ul className="navbar-nav mr-auto">
-                            <li className="nav-item">
+                            <li className="nav-item text-center">
                                 <Link className="nav-link" to="/contact">Contact</Link>
                             </li>
-                            <li className="nav-item">
+                            <li className="nav-item text-center">
                                 <Link className="nav-link" to="/about-us">About Us</Link>
                             </li>
                             {loaded &&
                                 <React.Fragment>
                                     {user &&
                                         <React.Fragment>
-                                            <li className="nav-item">
+                                            <li className="nav-item text-center">
                                                 <Link className="nav-link" to="/account">{user.name}</Link>
                                             </li>
-                                            <li className="nav-item">
+                                            <li className="nav-item text-center">
                                                 <Link className="nav-link" to="/auth/logout">Logout</Link>
                                             </li>
                                         </React.Fragment>
                                     }
                                     {!user &&
                                         <React.Fragment>
-                                            <li className="nav-item">
+                                            <li className="nav-item text-center">
                                                 <Link className="nav-link" to="/auth/login">Sign in</Link>
                                             </li>
-                                            <li className="nav-item">
+                                            <li className="nav-item text-center">
                                                 <Link className="nav-link" to="/auth/register">Sign up</Link>
                                             </li>
                                         </React.Fragment>

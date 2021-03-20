@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { postMessage } from '../../../api';
 import { validateEmail } from '../../../functions';
+import './style.scss'; 
 
 
 export default class Contact extends Component{
@@ -19,14 +20,7 @@ export default class Contact extends Component{
 
     onSubmitHandle(e){
         e.preventDefault();
-        axios.post('api/contacts', this.state, {
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
-        .then(res => res.data)
-        .then(res => console.log(res))
-        .catch(status => console.error(status));
+        postMessage(this.state);
     }
 
     onChangeHandle(e){
@@ -41,8 +35,8 @@ export default class Contact extends Component{
         let subjectIsValid = this.state.subject.length !== 0 ? 'is-valid' : '';
         let messageIsValid = this.state.message.length !== 0 ? 'is-valid' : '';
         return(
-            <div>
-                <h1 className="text-center mb-4"><i className="fa fa-envelope mr-3"></i>Contact with us</h1>
+            <div className="card pb-5 mt-5 mb-5 mx-auto" style={{width: '90%', maxWidth: '800px'}}>
+                <h1 id="contact-header" className="h4"><i className="fa fa-envelope mr-3"></i>Contact with us</h1>
                 <form onSubmit={this.onSubmitHandle} style={{width: '80%', maxWidth: '600px'}} className="mx-auto">
                     <label>
                         Email
@@ -82,6 +76,10 @@ export default class Contact extends Component{
                             className="btn btn-primary ml-3"
                         ><i className='fa fa-paper-plane mr-2'></i>Send</button>
                     </div>
+                    <span 
+                        className="text-muted float-right mr-3" 
+                        style={{fontSize: '10px', marginTop: '-20px'}}
+                    >* All data are required</span>
                 </form>
             </div>
         )
