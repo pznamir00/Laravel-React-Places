@@ -1,5 +1,5 @@
 <h1 style="font-weight: bold">Location Blog Project in Laravel</h1>
-<b>Link: <a href="http://floating-castle-27345.herokuapp.com/">http://floating-castle-27345.herokuapp.com/</a></b>
+<b>Link: <a href="http://compass-application.herokuapp.com/">http://compass-application.herokuapp.com/</a></b>
 
 <hr>
 
