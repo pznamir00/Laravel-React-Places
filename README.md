@@ -23,7 +23,7 @@
 <li>MySql</li>
 <li>Laravel</li>
 <li>Native Comments</li>
-<li>REST API</li>
+<li>RESTFULL API</li>
 </ul>
 
 <hr>
